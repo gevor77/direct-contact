@@ -1,0 +1,109 @@
+.client_block{
+  height: auto;
+}
+.client mat-radio-group span{
+  font-size: 30px;
+}
+span.glyphicon-question-sign{
+  color: #8a6d3b;
+}
+.client .mat_group mat-radio-button{
+  font-family: 'Raleway', sans-serif;
+  font-size: 13px;
+  color: #555;
+}
+/* .input_form{
+  background: #fff;
+  border: 1px solid #ccc;
+  padding-left: 5px;
+} */
+.example-form button,
+.example-form mat-form-field{
+  display: block;
+}
+span.glyphicon-remove-sign{
+  color:#a94442;
+}
+span.glyphicon--ok-sign{
+  color:#3c763d;
+}
+span.glyphicon-heart,
+span.glyphicon-info-sign{
+  color:#31708f;
+}
+.client_margine{
+  margin: 25px 0;
+  border: 1px solid #ddd;
+}
+.client_account p{
+  font-size: 14px;
+}
+.client_messages{
+  background:#fff;
+  margin-bottom: 25px;
+  height: initial;
+}
+.dropdown-toggle::after{
+  display: none;
+}
+.down_btn{
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  margin-top: 20px;
+}
+.client_messages span{
+  display: block;
+}
+.client_messages span,
+.client_messages span mat-icon{
+  font-size: 12px;
+}
+
+.client_wrap{
+  margin: 15px 0;
+  padding:7px 0; 
+}
+.client_grey{
+  border: 1px solid #ddd;
+}
+.clinet_sms{
+  width: 100%;
+  padding: 15px;
+}
+.border_left{
+  border-left: 1px dotted #ddd;
+  padding-left: 15px;
+}
+.client_wrap span.client_span > a > span{
+  font-size: 35px !important;
+  display: inline-block !important;
+}
+.client_wrap .dropdown a.dropdown-toggle{
+  text-decoration: none;
+}
+.client_messages mat-toolbar-row{
+  display: block;
+  height: initial;
+}
+.client_wrap span.active .dropdown-menu{
+  display: block;
+}
+.client_wrap span.active .dropdown-menu > li > a{
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: #333;
+  white-space: nowrap;
+}
+.client_wrap span.active .dropdown-menu > li > a span{
+  font-size: 20px;
+  display: inline-block;
+  border-right: none;
+}
+.chat-message-caret{
+  height: 26px;
+  width: 10px;
+}

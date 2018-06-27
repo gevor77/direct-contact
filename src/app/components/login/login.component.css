@@ -1,0 +1,28 @@
+.login_page{
+  padding:80px 0; 
+}
+.login_page h2{
+  border-bottom: 2px solid #34495e;
+  padding-bottom: 17px;
+  width: 100%;
+}
+.login-form{
+  max-width: 350px;
+  margin: 30px auto;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+.example-full-width {
+  width: 100%;
+  font-size: 15px;
+}
+
+.login-form button{
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  font-size: 18px;
+}
