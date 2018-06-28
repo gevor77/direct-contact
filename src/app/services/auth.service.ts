@@ -25,12 +25,15 @@ export class AuthService extends SafeSubscribe {
   }
 
   signInUser(email: string, password: string): Observable<any> {
-    return this.http.post(this.urlOnlyForOauth, {
-      username: email,
-      password: password,
-      grant_type: 'password',
-      client_id: 'front'
-    });
+    return this.http.post(this.urlOnlyForOauth,{
+      "data": {
+        "type": "user",
+        "attributes": {
+          "login": email,
+          "password": password
+        }
+      }
+     } );
   }
 
   recoveryPassword(email: string): Observable<any> {

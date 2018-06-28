@@ -20,6 +20,8 @@ import { FlexLayoutModule} from '@angular/flex-layout';
 import { AuthService } from './services/auth.service';
 import { HttpService } from './services/http.service';
 import { UserService } from './services/user.service';
+import { HttpClientModule } from '@angular/common/http'; 
+import { HttpModule } from '@angular/http';
 
 const appRoutes: Routes = [
   { path: 'client', component: ClientComponent },
@@ -50,7 +52,9 @@ const appRoutes: Routes = [
     MatIconModule,
     MatInputModule,
     MatCheckboxModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule,
+    HttpModule
   ],
   providers: [
     HttpService,

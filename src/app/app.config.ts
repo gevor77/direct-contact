@@ -1,9 +1,9 @@
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 
 export const appConfig = {
-  apiUrl: 'http://test-backend.b2b.cash:9900/api/v1',
-  apiOauth: 'http://test-backend.b2b.cash:9900/oauth',
-  serverUrl: 'http://test.b2b.cash:9900',
+  apiUrl: 'http://api.direct.atero.solutions/v1',
+  apiOauth: 'http://api.direct.atero.solutions/v1/users/token',
+  serverUrl: 'http://api.direct.atero.solutions',
 };
 
 export const allowedImageType = [

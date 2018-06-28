@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators, FormControl, NgForm } from '@angula
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import {AuthService} from '../../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -36,9 +36,9 @@ export class LoginComponent implements OnInit {
         res => {
           localStorage.setItem('auth', JSON.stringify(res));
 
-          this.authService.getUser(form.controls['email'].value).safeSubscribe(this, () => {
-            this.router.navigate(['/personal']);
-          });
+          // this.authService.getUser(form.controls['email'].value).safeSubscribe(this, () => {
+            this.router.navigate(['/client']);
+          // });
         },
         error => {
           this.showError(error.error.detail);
