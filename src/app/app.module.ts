@@ -16,15 +16,45 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatIconModule } from '@angular/material/icon';
 import { AlertModule } from 'ngx-bootstrap';
 import { FlexLayoutModule} from '@angular/flex-layout';
-
+import {
+  MatAutocompleteModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatChipsModule,
+  MatDialogModule,
+  MatExpansionModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatTableModule,
+  MatTabsModule,
+  MatTooltipModule,
+  MatStepperModule,
+} from '@angular/material';
 import { AuthService } from './services/auth.service';
 import { HttpService } from './services/http.service';
 import { UserService } from './services/user.service';
 import { HttpClientModule } from '@angular/common/http'; 
 import { HttpModule } from '@angular/http';
+import { ChartsComponent } from './components/charts/charts.component';
+import { MatDatepickerModule} from '@angular/material/datepicker';
+import { MessageComponent } from './components/client/message/message.component';
+import { ProfileComponent } from './components/profile/profile.component';
+
 
 const appRoutes: Routes = [
   { path: 'client', component: ClientComponent },
+  { path: 'charts',      component: ChartsComponent },
+  { path: 'profile',      component: ProfileComponent },
   { path: '',      component: LoginComponent },
 ];
 
@@ -32,7 +62,10 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     ClientComponent,
-    LoginComponent
+    LoginComponent,
+    ChartsComponent,
+    MessageComponent,
+    ProfileComponent
   ],
   imports: [
     FlexLayoutModule,
@@ -46,6 +79,8 @@ const appRoutes: Routes = [
     MatToolbarModule,
     BrowserAnimationsModule,
     MatListModule,
+    MatDatepickerModule,
+    MatTooltipModule,
     MatRadioModule,
     MatGridListModule,
     MatFormFieldModule,
@@ -54,7 +89,38 @@ const appRoutes: Routes = [
     MatCheckboxModule,
     MatButtonModule,
     HttpClientModule,
-    HttpModule
+    HttpModule,
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatStepperModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule
   ],
   providers: [
     HttpService,

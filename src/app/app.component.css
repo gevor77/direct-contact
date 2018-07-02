@@ -1,6 +1,12 @@
+.header{
+  background: #232d35;
+}
 .header img{
   width: 120px;
-
+  -webkit-filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
+  padding-right: 10px;
+  margin-right: 7px;
 }
 .header a{
   color: #fff;
@@ -11,14 +17,25 @@
   width: 69%;
   text-align: right;
 }
+.right-row .email_footer p{
+  color: #fff;
+  margin-top: 18px;
+}
+.right-row .email_footer form input:focus{
+  background-color: rgba(0,0,0,0.3);
+    border-color: rgba(0,0,0,0.25) !important;
+}
+.left-row .wrap-p{
+  color: #fff;
+}
 
 .content-wrapper{
-  min-height: 600px;
-  height: calc(69vh + 4px);
+  min-height: 650px;
 }
 .footer .copy{
   height: auto;
   width: 100%;
+  margin-bottom: 35px;
 }
 .twt{
   height: 200px;
@@ -33,10 +50,11 @@
   border-color: rgba(0,0,0,0.25);
   color: #fff;
   font-size: 13px;
-
+  padding-left: 8px;
 }
 .footer{
   padding-top: 23px;
+  background:#232d35;
   height: initial;
 }
 .footer h3{
@@ -57,5 +75,10 @@
 @media only screen and (max-width: 992px) {
   .content-wrapper{
     height: initial;
+  }
+}
+@media only screen and (max-width: 559px) {
+  .right-row{
+    padding: 10px 25px; 
   }
 }

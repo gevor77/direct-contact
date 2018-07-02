@@ -1,11 +1,35 @@
 .client_block{
   height: auto;
 }
+.client-page{
+  padding: 80px 0;
+}
+.client-page h2{
+  border-bottom: 2px solid #34495e;
+  padding-bottom: 17px;
+  width: 100%;
+}
 .client mat-radio-group span{
   font-size: 30px;
 }
 span.glyphicon-question-sign{
   color: #8a6d3b;
+}
+.client_block form .entertainment{
+  text-transform: uppercase;
+  margin: 10px 0;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+.client_block form .checkbox{
+  margin-left: 20px;
+  font-size: 13px;
+}
+.client_block form .checkbox label{
+  cursor: pointer;
+}
+.client_block form .checkbox input{
+  margin-top: 8px;
 }
 .client .mat_group mat-radio-button{
   font-family: 'Raleway', sans-serif;
@@ -75,6 +99,9 @@ span.glyphicon-info-sign{
   border-left: 1px dotted #ddd;
   padding-left: 15px;
 }
+.margin-bottom-15{
+  margin-right: 15px;
+}
 .client_wrap span.client_span > a > span{
   font-size: 35px !important;
   display: inline-block !important;
@@ -106,4 +133,19 @@ span.glyphicon-info-sign{
 .chat-message-caret{
   height: 26px;
   width: 10px;
+}
+.client_block .client-brends{
+  padding-left: 16px;
+}
+
+@media only screen and (max-width: 959px) {
+  .client_block .example-form{
+    width: 100%;
+  }
+  .client_block .mat_group{
+    width: 100%;
+  }
+  mat-list-item .mat-list-item-content{
+    padding:0; 
+  }
 }

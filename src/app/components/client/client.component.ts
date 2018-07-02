@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, Input,Output,EventEmitter, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
@@ -9,10 +9,7 @@ import { Component, OnInit, ViewEncapsulation, Input,Output,EventEmitter, ViewCh
 export class ClientComponent implements OnInit {
 
   constructor() { }
-  popUp(event){
-    event.preventDefault();;
-    console.log('test');
-  }
+
 
 
   ngOnInit() {

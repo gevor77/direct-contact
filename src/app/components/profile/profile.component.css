@@ -1,0 +1,70 @@
+.profile-blog  li{
+    list-style: none;
+    font-size: 14px;
+    border-top: 1px solid #ddd;
+    padding: 15px 0;
+}
+.profile-blog .profile-share li{
+    padding: 15px 0;
+}
+.profile-blog .profile-share{
+    padding-left: 0;
+}
+.profile-blog h4{
+    font-size: 18px;
+}
+.profile-blog  li p{
+    margin-bottom: 0;
+}
+.profile-blog .tariff-plan li:nth-child(odd),
+.profile-blog .profile-share li:nth-child(odd) {
+    background: #f9f9f9;    
+    line-height: 1.4;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: -1px;
+    vertical-align: top;
+}
+.profile-blog{
+    padding: 80px 0;
+}
+.profile-blog h2{
+    border-bottom: 2px solid #34495e;
+    padding-bottom: 17px;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+.profile-blog ::ng-deep .mat-tab-header{
+    margin-bottom: 25px;
+}
+.profile-blog .managment{
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+}
+.profile-blog .managment-institutions{
+    padding-left: 0;
+}
+.profile-blog .managment-institutions li p{
+    margin-bottom:0; 
+}
+.profile-blog .balance p{
+    font-size: 24px;
+    line-height: 1.8;
+}
+.profile-blog .choose-institution span,
+.profile-blog .notifications span{
+    margin-top: 15px;
+    font-size: 14px;
+}
+.profile-blog .choose-institution,
+.profile-blog .notifications{
+    margin-top: 15px;
+}
+@media only screen and (max-width: 599px) {
+    .notifications > div,
+    .profile-blog .tariff-plan li,
+    .profile-blog .managment-institutions li,
+    .profile-blog .profile-share li{
+        display: block !important;
+    }
+}

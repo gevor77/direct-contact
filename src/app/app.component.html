@@ -7,6 +7,8 @@
       <div class="header_bottom">
         <a routerLink="login">Մուտք</a>
         <a routerLink="client">Կաբինետ</a>
+        <a routerLink="charts">Գրաֆիկա</a>
+        <a routerLink="profile">Պրոֆիլ</a>
       </div>
     </div>
   </div>
@@ -21,63 +23,65 @@
   <div class="container">
     <div class="row">
 
-      <div fxLayout="row" fxLayoutAlign="left" fxFlex="100">
-        <a routerLink="/">
-          <img src="assets/logo-direct.png" alt="">
-        </a>
-        <p>Մենք անկեղծորեն հավատում ենք, որ հաճախորդների ուղղված բիզնեսը մեր մոտ ապագան է:</p>
-      </div>
-
-      <div class="copy" fxLayout="row" fxLayoutAlign="center" fxFlex="70">
-
-          <mat-list fxFlex="100">
-            <mat-list-item>
-              <h3 matLine> Home </h3>
-            </mat-list-item>
-            <mat-list-item>
-              <h3 matLine>Function</h3>
-            </mat-list-item>
-            <mat-list-item>
-              <h3 matLine>Function</h3>
-            </mat-list-item>
-          </mat-list>
-          <mat-list fxFlex="100">
-            <mat-list-item>
-              <h3 matLine> Home </h3>
-            </mat-list-item>
-            <mat-list-item>
-              <h3 matLine>Function</h3>
-            </mat-list-item>
-            <mat-list-item>
-              <h3 matLine>Function</h3>
-            </mat-list-item>
-          </mat-list>
-          <mat-list fxFlex="100">
-            <mat-list-item>
-              <h3 matLine> Home </h3>
-            </mat-list-item>
-            <mat-list-item>
-              <h3 matLine>Function</h3>
-            </mat-list-item>
-            <mat-list-item>
-              <h3 matLine>Function</h3>
-            </mat-list-item>
-          </mat-list>
-          <mat-list fxFlex="100">
-            <mat-list-item>
-              <h3 matLine> Home </h3>
-            </mat-list-item>
-            <mat-list-item>
-              <h3 matLine>Function</h3>
-            </mat-list-item>
-            <mat-list-item>
-              <h3 matLine>Function</h3>
-            </mat-list-item>
-          </mat-list>
-
+      <div class="left-row" fxLayout="column" fxLayoutAlign="left" fxFlex="70" fxFlex.xs="100">
+        <div fxFlex="100">
+          <a routerLink="/" fxFlex="17" fxFlex.xs="100" fxFlex.sm="30" fxFlex.md="20">
+            <img src="assets/logo-direct.png" alt="">
+          </a>
+          <p class="wrap-p" fxFlex="83" fxFlex.md="80" fxFlex.sm="70" fxFlex.xs="100">Մենք անկեղծորեն հավատում ենք, որ հաճախորդների ուղղված բիզնեսը մեր մոտ ապագան է:</p>
         </div>
-    <div>
-      <div class="twt_block" fxLayout="column" fxLayoutAlign="center" fxFlex="30">
+  
+        <div class="copy" fxLayoutAlign="center" fxFlex="100">
+  
+            <mat-list fxFlex="100">
+              <mat-list-item>
+                <h3 matLine> Home </h3>
+              </mat-list-item>
+              <mat-list-item>
+                <h3 matLine>Function</h3>
+              </mat-list-item>
+              <mat-list-item>
+                <h3 matLine>Function</h3>
+              </mat-list-item>
+            </mat-list>
+            <mat-list fxFlex="100">
+              <mat-list-item>
+                <h3 matLine> Home </h3>
+              </mat-list-item>
+              <mat-list-item>
+                <h3 matLine>Function</h3>
+              </mat-list-item>
+              <mat-list-item>
+                <h3 matLine>Function</h3>
+              </mat-list-item>
+            </mat-list>
+            <mat-list fxFlex="100">
+              <mat-list-item>
+                <h3 matLine> Home </h3>
+              </mat-list-item>
+              <mat-list-item>
+                <h3 matLine>Function</h3>
+              </mat-list-item>
+              <mat-list-item>
+                <h3 matLine>Function</h3>
+              </mat-list-item>
+            </mat-list>
+            <mat-list fxFlex="100">
+              <mat-list-item>
+                <h3 matLine> Home </h3>
+              </mat-list-item>
+              <mat-list-item>
+                <h3 matLine>Function</h3>
+              </mat-list-item>
+              <mat-list-item>
+                <h3 matLine>Function</h3>
+              </mat-list-item>
+            </mat-list>
+  
+          </div>
+      </div>
+    <div class="right-row" fxLayout="column" fxLayoutAlign="center" fxFlex="30" fxFlex.xs="100">
+      <div class="twt_block" >
         <div class="twt">
           <a class="twitter-timeline" href="https://twitter.com/gevorjan77">Tweets by TwitterDev</a>
         </div>
@@ -85,7 +89,7 @@
           <p>Բաժանորդագրվեք մեր նորություններին եւ պահեք մեր ընկերության մասին վերջին լուրերը:</p>
           <form class="example-form footer_btn">
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Մուտքագրեք ձեր փոստը" class="form-control"> 
+              <input matInput placeholder="Մուտքագրեք ձեր փոստը" class="form-control" type="email"> 
             </mat-form-field>
             <button mat-button class="btn btn-success">Բաժանորդագրվեք</button>
           </form>

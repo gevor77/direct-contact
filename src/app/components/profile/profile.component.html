@@ -1,0 +1,150 @@
+<div class="profile-blog">
+  <div class="container">
+    <div class="row">
+      <h2>Պրոֆիլ</h2>
+      <mat-tab-group fxFlex.sm="100" fxFlex.xs="100">
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <img src="../../../assets/share.png" alt="">
+          </ng-template>
+          <form class="example-form">
+            <ul class="profile-share">
+              <li>
+                <p fxFlex="70" fxFlex.xs="100" fxFlex.sm="100">ՀԵՌԱԽՈՍԱՀԱՄԱՐԸ</p>
+                <span fxFlex="30" fxFlex.xs="100" fxFlex.sm="100">
+                  <mat-form-field class="example-full-width">
+                    <input matInput value="+7 (987) 654-32-10">
+                  </mat-form-field>
+                </span>
+              </li>
+              <li>
+                <p fxFlex="70" fxFlex.xs="100" fxFlex.sm="100">Ընթացիկ մնացորդը</p>
+                <span fxFlex="30" fxFlex.xs="100" fxFlex.sm="100">0 рублей</span>
+              </li>
+              <li>
+                <p fxFlex="70" fxFlex.xs="100" fxFlex.sm="100">ՍԱԿԱԳԻՆԸ ՎՃԱՐԵԼ Է</p>
+                <span fxFlex="30" fxFlex.xs="100" fxFlex.sm="100">2020-11-30 00:00:00</span>
+              </li>
+              <li>
+                <p fxFlex="70" fxFlex.xs="100" fxFlex.sm="100">Չհրապարակված SMS-ների քանակությունը</p>
+                <span fxFlex="30" fxFlex.xs="100" fxFlex.sm="100">55</span>
+              </li>
+              <li>
+                <p fxFlex="70" fxFlex.xs="100" fxFlex.sm="100">Արժեքը SMS</p>
+                <span fxFlex="30" fxFlex.xs="100" fxFlex.sm="100"> 2 рублей</span>
+              </li>
+            </ul>
+            <div class="text-center"><button mat-button>Click me!</button></div>
+          </form>
+        </mat-tab>
+        <mat-tab label="Ուտելիքներ">
+          <h4 class="managment">Ինստիտուտների կառավարում</h4>
+          <form class="example-form">
+            <ul class="managment-institutions">
+              <li>
+                РЕСТОРАН АЙВЕНГО
+              </li>
+              <li>
+                <p fxFlex="60">Հեռախոսահամար</p>
+                <span fxFlex="40">
+                  <mat-form-field class="example-full-width">
+                    <input matInput value="+7 (987) 654-32-10">
+                  </mat-form-field>
+                </span>
+              </li>
+              <li>
+                <p fxFlex="60">Աշխարհագրական կոորդինատները
+                </p>
+                <span fxFlex="40">
+                  <mat-form-field class="example-full-width">
+                    <input matInput value="44.56853870688657, 2.052785500000009">
+                  </mat-form-field>
+                </span>
+              </li>
+              <li>
+                <p fxFlex="60">Կարգավիճակը</p>
+                <span fxFlex="40">
+                  <mat-form-field fxFlex="60">
+                    <mat-select panelClass="example-panel">
+                      <mat-option value="red">Աշխատում է</mat-option>
+                      <mat-option value="green">Չի Աշխատում</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </span>
+              </li>
+              <li class="text-center">
+                <button mat-button>Click me!</button>
+              </li>
+            </ul>
+          </form>
+        </mat-tab>
+        <mat-tab label="Հաշվեկշիռը">
+          <div class="balance">
+            <h4>Ընթացիկ մնացորդը</h4>
+            <p>0 рублей</p>
+          </div>
+        </mat-tab>
+        <mat-tab label="Սակագնային պլան">
+          <ul class="tariff-plan">
+            <li>
+              <p fxFlex="70">ՍԱԿԱԳՆԱՅԻՆ Պլան</p>
+              <span fxFlex="30">
+                <mat-form-field fxFlex="60">
+                  <mat-select panelClass="example-panel">
+                    <mat-option value="red">Դեմո</mat-option>
+                    <mat-option value="green">Աշխատում</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </span>
+            </li>
+            <li>
+              <p fxFlex="70">ՍԱԿԱԳԻՆԸ ՎՃԱՐԵԼ է</p>
+              <span fxFlex="30">2020-11-30 00:00:00</span>
+            </li>
+            <li>
+              <p fxFlex="70">Չհրապարակված SMS-ների քանակությունը</p>
+              <span fxFlex="30">55</span>
+            </li>
+            <li>
+              <button mat-button>Click me!</button>
+            </li>
+          </ul>
+        </mat-tab>
+        <mat-tab label="Կարգավորումներ">
+          <form class="example-form">
+            <div class="change-password">
+              <h4>Փոխել գաղտնաբառը</h4>
+              <mat-form-field class="example-full-width">
+                <input matInput value="ZfynjwRSgP6P">
+              </mat-form-field>
+            </div>
+            <div class="notifications">
+              <h4>Հետադարձ կապի ծանուցումներ:</h4>
+              <div>
+                <span fxFlex="40" fxFlex.xs="100">Ընտրեք հաստատություն</span>
+                <mat-form-field fxFlex="60" fxFlex.xs="100">
+                  <mat-select panelClass="example-panel">
+                    <mat-option value="red">Իսկական</mat-option>
+                    <mat-option value="green">Դեմո</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="choose-institution">
+              <span fxFlex="40" fxFlex.xs="100">Ինչպես ստանալ ծանուցումներ</span>
+              <mat-form-field fxFlex="60" fxFlex.xs="100">
+                <mat-select panelClass="example-panel">
+                  <mat-option value="red">Смс</mat-option>
+                  <mat-option value="green">Телеграмм</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="text-center">
+              <button mat-button>Պահել</button>
+            </div>
+          </form>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</div>

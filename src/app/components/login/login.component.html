@@ -1,15 +1,17 @@
-<div class="container login_page">
-    <div class="row">
-        <h2>Անձնական Գրասենյակ</h2>
-        <form class="form-signin login-form" (ngSubmit)="onSubmit(loginForm)" [formGroup]="loginForm">
-            <mat-form-field class="example-full-width">
-                <input matInput formControlName="email" class="example-full-width" type="email" placeholder="Էլ․ Փոստ" required>
-            </mat-form-field>
+<div class="login_page">
+    <div class="container">
+        <div class="row">
+            <h2>Անձնական Գրասենյակ</h2>
+            <form class="form-signin login-form" (ngSubmit)="onSubmit(loginForm)" [formGroup]="loginForm">
+                <mat-form-field class="example-full-width">
+                    <input matInput formControlName="email" class="example-full-width" type="email" placeholder="Էլ․ Փոստ" required>
+                </mat-form-field>
 
-            <mat-form-field class="example-full-width">
-                <input matInput formControlName="password" class="example-full-width" type="password" placeholder="Գաղտնաբառ" required>
-            </mat-form-field>
-            <button type="submit" mat-button class="btn btn-primary btn-block">Մուտք գործեք</button>
-        </form>
+                <mat-form-field class="example-full-width">
+                    <input matInput formControlName="password" class="example-full-width" type="password" placeholder="Գաղտնաբառ" required>
+                </mat-form-field>
+                <button type="submit" mat-button class="btn btn-primary btn-block">Մուտք գործեք</button>
+            </form>
+        </div>
     </div>
 </div>
