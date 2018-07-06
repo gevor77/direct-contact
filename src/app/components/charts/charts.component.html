@@ -3,7 +3,7 @@
     <div class="row">
       <h2>Գծապատկերներ (վերջին 70 օրերի վերլուծությունների սեգմենտացիա)</h2>
       <mat-toolbar>
-        <mat-toolbar-row class="well">
+        <mat-toolbar-row class="well segment" fxLayout="row">
           <div fxFlex="30">
             <h3>ԺԱՄԱՆՑ</h3>
             <div class="checkbox">
@@ -15,21 +15,32 @@
           <div fxFlex="70">
             <h3>ԴԻԱԳՐՄԱՆ ՁԵՎԱՉԱՓ</h3>
             <mat-radio-group>
-              <mat-radio-button value="1">2D</mat-radio-button>
-              <mat-radio-button value="2">3D</mat-radio-button>
+              <mat-radio-button checked value="1">3D</mat-radio-button>
             </mat-radio-group>
           </div>
         </mat-toolbar-row>
       </mat-toolbar>
-      <div class="￼statistics-reviews">
-        <div class="panel"></div>
-        <div class="graph">
-dsdsdsdsds
+      <div class="￼statistics-reviews text-center">
+          <div class="panel"></div>
+        <div class="dynamics-number" fxFlex="100">
+          <h5>Վիճակագրություններ ըստ վերանայման</h5>
+          <div style="display: block">
+            <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"></canvas>
+          </div>
         </div>
-        <div class="panel"></div>
         <div class="dynamics-messages">
-dsdsdsdsddsdsd
+          <div class="panel"></div>
+          <div>
+            <h5>Հաղորդագրությունների թվի դինամիկան</h5>
+            <div style="display: block">
+              <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend"
+                [chartType]="barChartType" (chartHover)="chartHoveredBar($event)" (chartClick)="chartClickedBar($event)"></canvas>
+            </div>
+            <button (click)="randomize()">Update</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
+</div>

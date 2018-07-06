@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl, NgForm } from '@angular/forms'
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { AuthService } from '../../services/auth.service';
 
@@ -16,10 +15,10 @@ export class LoginComponent implements OnInit {
   loading = false;
   formError = '';
   loginForm: FormGroup;
-
+  erroLogin: boolean;
   constructor(
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
   ) { }
 
   ngOnInit() {
@@ -30,27 +29,29 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(form) {
-    if( this.loginForm.valid ) {
+    if( this.loginForm.valid) {
       this.authService.signInUser(form.controls['email'].value, form.controls['password'].value)
       .subscribe(
         res => {
           localStorage.setItem('auth', JSON.stringify(res));
-
+          this.authService.isLoggedIN.next(true);
           // this.authService.getUser(form.controls['email'].value).safeSubscribe(this, () => {
-            this.router.navigate(['/client']);
+            this.router.navigate(['/cabinet']);
           // });
         },
         error => {
           this.showError(error.error.detail);
           this.loading = false;
+          this.erroLogin = true;
         },
         () => {
           this.loading = false;
+          this.erroLogin = true;
         });
+        
     }
   }
-
-  ngAfterViewInit() {
+ ngAfterViewInit() {
     !function (d, s, id) {
       var js: any,
         fjs = d.getElementsByTagName(s)[0],

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {Router} from '@angular/router';
-import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams, HttpResponse} from '@angular/common/http';
+import { Router } from '@angular/router';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams, HttpResponse} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
@@ -17,22 +17,24 @@ export class HttpService {
   ) {
   }
 
-  get(url: string, params: any = {}): Observable<HttpResponse<Object>> {
+
+
+  get(url: string, params: any = {}) {
     return this.http.get<Object>(appConfig.apiUrl + url, this.addOptions(this.toHttpParams(params))).catch(error => this.handleError(error));
   }
 
-  post(url: string, body: any = {}): Observable<HttpResponse<Object>> {
+  post(url: string, body: any = {}) {
     return this.http.post<Object>(appConfig.apiUrl + url, body, this.addOptions()).catch(error => this.handleError(error));
   }
 
-  put(url: string, body: any = {}): Observable<HttpResponse<Object>> {
+  put(url: string, body: any = {}){
     return this.http.put<Object>(appConfig.apiUrl + url, body, this.addOptions()).catch(error => this.handleError(error));
   }
-  patch(url: string, body: any = {}): Observable<HttpResponse<Object>> {
+  patch(url: string, body: any = {}){
     return this.http.patch<Object>(appConfig.apiUrl + url, body, this.addOptions()).catch(error => this.handleError(error));
   }
 
-  delete(url: string): Observable<HttpResponse<Object>> {
+  delete(url: string) {
     return this.http.delete<Object>(appConfig.apiUrl + url, this.addOptions()).catch(error => this.handleError(error));
   }
 
@@ -57,9 +59,9 @@ export class HttpService {
 
     const auth = JSON.parse(localStorage.getItem('auth'));
 
-    if (auth && auth.access_token) {
+    if (auth && auth.data.attributes.token) {
       options['headers'] = new HttpHeaders({
-          'Authorization': `Bearer ${auth.access_token}`
+          'Authorization': `Bearer ${auth.data.attributes.token}`
         });
     }
 
@@ -78,4 +80,5 @@ export class HttpService {
       return Observable.throw(error);
     }
   }
+  me
 }

@@ -1,4 +1,4 @@
-<mat-toolbar ngClass="client_margine client_account client_messages">
+<mat-toolbar  ngClass="client_margine client_account client_messages" >
   <mat-toolbar-row>
     <div class="container">
       <div class="row" fxLayout.xs="column" fxLayout.sm="column">
@@ -8,13 +8,15 @@
           <span>
             <mat-icon>map</mat-icon> Ресторан Айвенго</span>
         </div>
-        <div ngClass="client_wrap" fxFlex="83">
-          <div ngClass="alert alert-grey client_grey">
+        <div class="client_wrap" fxFlex="83">
+          <div class="alert alert-grey client_grey" fxLayout="row">
             <div fxFlex="9" fxFlex.xs="100">
               <div class="client_span">
 
                 <mat-form-field>
-                  <mat-select [(value)]="selected" class="nolabel" [ngClass]="selected" [formControl]="panelColor" panelClass="example-panel">
+                  <mat-select [(value)]="selected"
+                   class="nolabel" [ngClass]="selected" [formControl]="panelColor"
+                    panelClass="example-panel">
                     <mat-option value="nolabel">
                       <span class="glyphicon glyphicon-question-sign"></span>
                       Ոչ պիտակ

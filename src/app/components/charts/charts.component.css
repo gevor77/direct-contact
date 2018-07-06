@@ -14,3 +14,20 @@
 .charts ::ng-deep .mat-radio-button{
     display: block;
 }
+
+.charts .￼statistics-reviews{
+    width: 100%;
+    padding: 35px 0;
+}
+.￼statistics-reviews .dynamics-number{
+    margin:18px 0; 
+}
+.segment h3,
+.segment label,
+.segment mat-radio-group{
+    text-transform: uppercase;
+    margin: 10px 0px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    line-height: 1.9;
+}

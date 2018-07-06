@@ -16,6 +16,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatIconModule } from '@angular/material/icon';
 import { AlertModule } from 'ngx-bootstrap';
 import { FlexLayoutModule} from '@angular/flex-layout';
+import { ChartsModule } from 'ng2-charts';
+
 import {
   MatAutocompleteModule,
   MatButtonToggleModule,
@@ -49,10 +51,11 @@ import { ChartsComponent } from './components/charts/charts.component';
 import { MatDatepickerModule} from '@angular/material/datepicker';
 import { MessageComponent } from './components/client/message/message.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { ChartModule } from 'angular-highcharts';
 
 
 const appRoutes: Routes = [
-  { path: 'client', component: ClientComponent },
+  { path: 'cabinet', component: ClientComponent },
   { path: 'charts',      component: ChartsComponent },
   { path: 'profile',      component: ProfileComponent },
   { path: '',      component: LoginComponent },
@@ -120,12 +123,14 @@ const appRoutes: Routes = [
     MatTableModule,
     MatTabsModule,
     MatToolbarModule,
-    MatTooltipModule
+    ChartModule,
+    MatTooltipModule,
+    ChartsModule
   ],
   providers: [
     HttpService,
     AuthService,
-    UserService
+    UserService,
   ],
   bootstrap: [AppComponent]
 })

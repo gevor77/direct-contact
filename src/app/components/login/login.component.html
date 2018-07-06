@@ -4,13 +4,15 @@
             <h2>Անձնական Գրասենյակ</h2>
             <form class="form-signin login-form" (ngSubmit)="onSubmit(loginForm)" [formGroup]="loginForm">
                 <mat-form-field class="example-full-width">
-                    <input matInput formControlName="email" class="example-full-width" type="email" placeholder="Էլ․ Փոստ" required>
+                    <input matInput formControlName="email" class="example-full-width" email="true" type="email" placeholder="Էլ․ Փոստ" required>
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width">
                     <input matInput formControlName="password" class="example-full-width" type="password" placeholder="Գաղտնաբառ" required>
                 </mat-form-field>
+                <p class="error" *ngIf="erroLogin">Սխալ էլ-փոստ կամ գաղտնաբառ</p>
                 <button type="submit" mat-button class="btn btn-primary btn-block">Մուտք գործեք</button>
+                
             </form>
         </div>
     </div>

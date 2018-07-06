@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
-
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import { filter } from 'rxjs/operators';
 
 @Injectable()
 export class UserService {
@@ -18,9 +18,8 @@ export class UserService {
   }
 
   get userReady() {
-    return this.user
-      .filter(u => !!u)
-      .take(1);
+    return !!this.user
+    
   }
 
   setUser(a) {

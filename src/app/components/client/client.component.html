@@ -69,7 +69,7 @@
                     <strong>+7 (931) 287-07-39</strong>, ռեստորանի Իվանխոի համար
                 </p>
             </div>
-            <app-message fxFlex="100"></app-message>
+            <app-message *ngFor="let messages of msg" fxFlex="100"></app-message>
 
         </div>
     </div>

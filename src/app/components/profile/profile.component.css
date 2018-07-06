@@ -7,6 +7,9 @@
 .profile-blog .profile-share li{
     padding: 15px 0;
 }
+.profile-blog form{
+    width: 100%;
+}
 .profile-blog .profile-share{
     padding-left: 0;
 }

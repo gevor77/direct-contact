@@ -5,10 +5,11 @@
         <img src="assets/logo-direct.png" alt="">
       </a>
       <div class="header_bottom">
-        <a routerLink="login">Մուտք</a>
-        <a routerLink="client">Կաբինետ</a>
-        <a routerLink="charts">Գրաֆիկա</a>
-        <a routerLink="profile">Պրոֆիլ</a>
+        <a *ngIf="!isLoggedIn" routerLink="">Մուտք</a>
+        <a *ngIf="isLoggedIn" routerLink="cabinet">Կաբինետ</a>
+        <a *ngIf="isLoggedIn" routerLink="charts">Գրաֆիկա</a>        
+        <a *ngIf="isLoggedIn" routerLink="profile">Պրոֆիլ</a>
+        <a *ngIf="isLoggedIn" (click)="logout()" routerLink="">Ելք</a>
       </div>
     </div>
   </div>
@@ -28,7 +29,7 @@
           <a routerLink="/" fxFlex="17" fxFlex.xs="100" fxFlex.sm="30" fxFlex.md="20">
             <img src="assets/logo-direct.png" alt="">
           </a>
-          <p class="wrap-p" fxFlex="83" fxFlex.md="80" fxFlex.sm="70" fxFlex.xs="100">Մենք անկեղծորեն հավատում ենք, որ հաճախորդների ուղղված բիզնեսը մեր մոտ ապագան է:</p>
+          <p class="wrap-p" fxFlex="83" fxFlex.md="80" fxFlex.sm="70" fxFlex.xs="100">Մենք անկեղծորեն հավատում ենք, որ հաճախորդների ուղղված բիզնեսը մեր ապագան է:</p>
         </div>
   
         <div class="copy" fxLayoutAlign="center" fxFlex="100">

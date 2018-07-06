@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl } from '@angular/forms';
+import { FormControl } from '@angular/forms';
+import { HttpService } from '../../../services/http.service';
 
 @Component({
   selector: 'app-message',
@@ -7,12 +8,15 @@ import {FormControl } from '@angular/forms';
   styleUrls: ['./message.component.css']
 })
 export class MessageComponent implements OnInit {
-  constructor() { }
+  constructor(  
+    public http: HttpService,
+
+  ) { }
   panelColor = new FormControl('nolabel');
-  myClick(){
-    
-  }
+
   ngOnInit() {
   }
+
+
 
 }

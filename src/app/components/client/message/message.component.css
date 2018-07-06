@@ -24,85 +24,72 @@ span.glyphicon-info-sign{
   color:#31708f;
 }
 span.glyphicon-remove-sign{
-    color:#a94442;
-  }
-  span.glyphicon--ok-sign{
-    color:#3c763d;
-  }
+  color:#a94442;
+}
+span.glyphicon--ok-sign{
+  color:#3c763d;
+}
 .border_left{
-    border-left: 1px dotted #ddd;
-    padding-left: 15px;
-  }
-  .chat-message-caret{
-    height: 26px;
-    width: 10px;
-  }
-  .client_account p{
-    font-size: 14px;
-  }
-  mat-select.nolabel{
-    background-image:url('../../../../assets/aterosolutions.png');
-    width: 40px;
-    height: 33px;
-    background-repeat: no-repeat;
-  }
-  mat-select.yourquestion{
-    background-image:url('../../../../assets/aterosolutions.png');
-    width: 40px;
-    height: 33px;
-    background-repeat: no-repeat;
-    background-position: -60px;
-  }
-  mat-select.thecomplaint{
-    background-image:url('../../../../assets/aterosolutions.png');
-    width: 40px;
-    height: 33px;
-    background-repeat: no-repeat;
-    background-position: -122px;
-  }
-  mat-select.thankyou{
-    background-image:url('../../../../assets/aterosolutions.png');
-    width: 40px;
-    height: 33px;
-    background-repeat: no-repeat;
-    background-position: -184px;
-  }
-  mat-select.supply{
-    background-image:url('../../../../assets/aterosolutions.png');
-    width: 40px;
-    height: 33px;
-    background-repeat: no-repeat;
-    background-position: -244px;
-  }
+  border-left: 1px dotted #ddd;
+  padding-left: 15px;
+}
+.chat-message-caret{
+  height: 26px;
+  width: 10px;
+}
+.client_account p{
+  font-size: 14px;
+}
+mat-select.nolabel{
+  background-image:url('../../../../assets/aterosolutions.png');
+  width: 40px;
+  height: 33px;
+  background-repeat: no-repeat;
+}
+mat-select.yourquestion{
+  background-image:url('../../../../assets/aterosolutions.png');
+  width: 40px;
+  height: 33px;
+  background-repeat: no-repeat;
+  background-position: -60px;
+}
+mat-select.thecomplaint{
+  background-image:url('../../../../assets/aterosolutions.png');
+  width: 40px;
+  height: 33px;
+  background-repeat: no-repeat;
+  background-position: -122px;
+}
+mat-select.thankyou{
+  background-image:url('../../../../assets/aterosolutions.png');
+  width: 40px;
+  height: 33px;
+  background-repeat: no-repeat;
+  background-position: -184px;
+}
+mat-select.supply{
+  background-image:url('../../../../assets/aterosolutions.png');
+  width: 40px;
+  height: 33px;
+  background-repeat: no-repeat;
+  background-position: -244px;
+}
   
-  mat-select .mat-form-field-infix{
-      width: initial;
-  }
+mat-select .mat-form-field-infix{
+    width: initial;
+}
 .client_wrap .client_span mat-form-field mat-select ::ng-deep .mat-select-value{
     display: none;
 } 
 .client_wrap .client_span mat-form-field mat-select ::ng-deep .mat-select-trigger{
     margin: 8px 35px;
 }
-
-  /* .client_wrap span.client_span span{
-    display: block;
-    padding: 3px 20px;
-    clear: both;
-    font-weight: normal;
-    line-height: 1.42857143;
-    color: #333;
-    white-space: nowrap;
-  }
-  .client_wrap span.client_span span{
-    font-size: 20px;
-    display: inline-block;
-    border-right: none;
-  } */
-  /* .client_wrap span.client_span span{
-    font-size: 35px !important;
-    display: inline-block !important;
-  } */
+::ng-deep .mat-select-panel {
+  min-width: 100% !important;
+}
+::ng-deep .mat-select-panel .mat-option{
+  height: 40px !important;
+}
 .client_wrap .client_span mat-form-field{
     width: 100%;
     padding-right: 7px;
