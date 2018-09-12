@@ -1,109 +1,26 @@
 .client_messages{
-    background:#fff;
-    margin-bottom: 25px;
-    height: initial;
-    padding:8px; 
-  }
-  .client_messages span{
-    display: block;
-  }
-  .client_messages span,
+  background:#fff;
+  margin-bottom: 25px;
+  height: initial;
+  padding:8px; 
+}
+.client_messages span{
+  display: block;
+}
+.client_messages span,
 .client_messages span mat-icon{
   font-size: 12px;
 }
 .client_messages mat-toolbar-row{
-    display: block;
-    height: initial;
-  }
-  .client_margine{
-    margin: 25px 0;
-    border: 1px solid #ddd;
-  }
-  span.glyphicon-heart,
-span.glyphicon-info-sign{
-  color:#31708f;
+  display: block;
+  height: initial;
 }
-span.glyphicon-remove-sign{
-  color:#a94442;
-}
-span.glyphicon--ok-sign{
-  color:#3c763d;
-}
-.border_left{
-  border-left: 1px dotted #ddd;
-  padding-left: 15px;
+.client_margine{
+  margin: 25px 0;
+  border: 1px solid #ddd;
 }
 .chat-message-caret{
   height: 26px;
   width: 10px;
 }
-.client_account p{
-  font-size: 14px;
-}
-mat-select.nolabel{
-  background-image:url('../../../../assets/aterosolutions.png');
-  width: 40px;
-  height: 33px;
-  background-repeat: no-repeat;
-}
-mat-select.yourquestion{
-  background-image:url('../../../../assets/aterosolutions.png');
-  width: 40px;
-  height: 33px;
-  background-repeat: no-repeat;
-  background-position: -60px;
-}
-mat-select.thecomplaint{
-  background-image:url('../../../../assets/aterosolutions.png');
-  width: 40px;
-  height: 33px;
-  background-repeat: no-repeat;
-  background-position: -122px;
-}
-mat-select.thankyou{
-  background-image:url('../../../../assets/aterosolutions.png');
-  width: 40px;
-  height: 33px;
-  background-repeat: no-repeat;
-  background-position: -184px;
-}
-mat-select.supply{
-  background-image:url('../../../../assets/aterosolutions.png');
-  width: 40px;
-  height: 33px;
-  background-repeat: no-repeat;
-  background-position: -244px;
-}
-  
-mat-select .mat-form-field-infix{
-    width: initial;
-}
-.client_wrap .client_span mat-form-field mat-select ::ng-deep .mat-select-value{
-    display: none;
-} 
-.client_wrap .client_span mat-form-field mat-select ::ng-deep .mat-select-trigger{
-    margin: 8px 35px;
-}
-::ng-deep .mat-select-panel {
-  min-width: 100% !important;
-}
-::ng-deep .mat-select-panel .mat-option{
-  height: 40px !important;
-}
-.client_wrap .client_span mat-form-field{
-    width: 100%;
-    padding-right: 7px;
-}
-  .client_wrap{
-    margin: 15px 0;
-    padding:7px 0; 
-  }
-  .client_grey{
-    border: 1px solid #ddd;
-  }
-  span.glyphicon-question-sign{
-    color: #8a6d3b;
-  }
-  .margin-bottom-15{
-    margin-right: 15px;
-  }
+

@@ -1,0 +1,43 @@
+<div class="admin-messages">
+    <h2 class="text-center">Հաղորդագրություններ</h2>
+    <div class="profile-name">
+        <p>Company Name - {{adminprofile.company_name}}</p>
+    </div>
+    <div class="data-table">
+        <table class="table table-striped" [mfData]="profiles" #mf="mfDataTable" [mfRowsOnPage]="12">
+            <thead>
+                <tr>
+                    <th style="width: 10%">
+                        <mfDefaultSorter by="id">Id</mfDefaultSorter>
+                    </th>
+                    <th style="width: 35%">
+                        <mfDefaultSorter by="body">Messages</mfDefaultSorter>
+                    </th>
+                    <th style="width: 20%">
+                        <mfDefaultSorter by="address">Հեռախոսահամարը</mfDefaultSorter>
+                    </th>
+                    <th style="width: 35%">
+                        <mfDefaultSorter by="replies">Պատասխան</mfDefaultSorter>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let profile of mf.data">
+                    <td>{{profile.id}}</td>
+                    <td>{{profile.body}}</td>
+                    <td>{{profile.address}}</td>
+                    <td>
+                        <p *ngIf="profile.replies[0]">{{profile.replies[0].body}}</p>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">
+                        <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

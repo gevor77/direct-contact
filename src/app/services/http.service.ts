@@ -59,9 +59,9 @@ export class HttpService {
 
     const auth = JSON.parse(localStorage.getItem('auth'));
 
-    if (auth && auth.data.attributes.token) {
+    if (auth.auth && auth.auth.token) {
       options['headers'] = new HttpHeaders({
-          'Authorization': `Bearer ${auth.data.attributes.token}`
+          'Authorization': `Bearer ${auth.auth.token}`
         });
     }
 
@@ -80,5 +80,4 @@ export class HttpService {
       return Observable.throw(error);
     }
   }
-  me
 }

@@ -1,56 +1,50 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { HttpService } from '../../services/http.service';
+
 @Component({
   selector: 'app-charts',
   templateUrl: './charts.component.html',
   styleUrls: ['./charts.component.css']
 })
-export class ChartsComponent implements OnInit {
 
-  public doughnutChartLabels: string[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
-  public doughnutChartData: number[] = [30, 30, 30];
+export class ChartsComponent implements OnInit {
+  @Input() message;
+  public none = 0;
+  public thankyou = 0;
+  public question = 0;
+  public claim = 0;
+  public offer = 0;
+  public messages = [];
+  public allMessages =[];
+  public chartHovered;
+  public doughnutChartLabels: string[] = ['Նշված չէ', 'Հարց', 'Բողոքը', 'Առաջարկ', 'Շնորհակալություն'];
+  public doughnutChartData: number[] = [30, 60, 40, 50, 70];
   public doughnutChartType: string = 'pie';
 
-  public barChartLabels: string[] = ['2008', '2010', '2012', '2013', '2014', '2016', '2018'];
-  public barChartType: string = 'bar';
-  public barChartLegend: boolean = true;
-
-  constructor() { }
+  constructor(
+    public http: HttpService,
+  ) { }
 
   ngOnInit() {
+    this.accordingReview();
   }
 
-  // events
+  accordingReview() {
+    this.http.get('/messages/userallmessages')
+      .subscribe(
+        (messages: any) => {
+          messages = messages.body;
+          this.none = messages.filter( a => a.status == "none").length;
+          this.thankyou = messages.filter(a => a.status == "thankyou").length;
+          this.question = messages.filter(a => a.status == "question").length;
+          this.claim = messages.filter(a => a.status == "claim").length;
+          this.offer = messages.filter(a => a.status == "offer").length;
+          this.doughnutChartData = [this.claim, this.none, this.question, this.offer, this.thankyou];                   
+        })
+  }
+
   public chartClicked(e: any): void {
   }
-
-  public chartHovered(e: any): void {
-  }
-  public barChartOptions: any = {
-    scaleShowVerticalLines: false,
-    responsive: true
-  };
-
-  public barChartData: any[] = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
-    { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' }
-  ];
   public chartClickedBar(e: any): void {
-  }
-
-  public chartHoveredBar(e: any): void {
-  }
-
-  public randomize(): void {
-    let data = [
-      Math.round(Math.random() * 100),
-      59,
-      80,
-      (Math.random() * 100),
-      56,
-      (Math.random() * 100),
-      40];
-    let clone = JSON.parse(JSON.stringify(this.barChartData));
-    clone[0].data = data;
-    this.barChartData = clone;
   }
 }

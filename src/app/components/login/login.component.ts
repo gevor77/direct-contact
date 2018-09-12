@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControl, NgForm } from '@angular/forms'
+import { FormGroup, Validators, FormControl } from '@angular/forms'
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -16,6 +15,7 @@ export class LoginComponent implements OnInit {
   formError = '';
   loginForm: FormGroup;
   erroLogin: boolean;
+  
   constructor(
     private router: Router,
     private authService: AuthService,
@@ -29,14 +29,19 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(form) {
-    if( this.loginForm.valid) {
-      this.authService.signInUser(form.controls['email'].value, form.controls['password'].value)
+  if( this.loginForm.valid) {
+      this.authService.signInUser(
+      form.controls['email'].value, 
+      form.controls['password'].value)
       .subscribe(
         res => {
           localStorage.setItem('auth', JSON.stringify(res));
           this.authService.isLoggedIN.next(true);
           // this.authService.getUser(form.controls['email'].value).safeSubscribe(this, () => {
             this.router.navigate(['/cabinet']);
+            setTimeout(()=>{
+              window.location.reload()
+            })
           // });
         },
         error => {

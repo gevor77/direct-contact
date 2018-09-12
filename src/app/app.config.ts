@@ -6,6 +6,12 @@ export const appConfig = {
   serverUrl: 'http://api.direct.atero.solutions',
 };
 
+// export const appConfig = {
+//   apiUrl: 'http://directcontact.am/apis/v1',
+//   apiOauth: 'http://directcontact.am/apis/v1/users/token',
+//   serverUrl: 'http://directcontact.am',
+// };
+
 export const allowedImageType = [
   'image/jpeg',
   'image/jpg',

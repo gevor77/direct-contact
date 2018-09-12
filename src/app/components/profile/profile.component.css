@@ -2,10 +2,10 @@
     list-style: none;
     font-size: 14px;
     border-top: 1px solid #ddd;
-    padding: 15px 0;
+    padding: 15px 0 15px 15px;
 }
 .profile-blog .profile-share li{
-    padding: 15px 0;
+    padding: 15px 0 15px 15px;
 }
 .profile-blog form{
     width: 100%;
@@ -18,6 +18,37 @@
 }
 .profile-blog  li p{
     margin-bottom: 0;
+}
+.profile-blog .company-name p{
+    margin-top: 19px;
+    font-size: 14px;
+}
+.profile-blog .change-password{
+    margin-bottom: 25px;
+}
+.profile-blog .change-password ::ng-deep .mat-form-field-label-wrapper label,
+.profile-blog .company-name ::ng-deep .mat-form-field-label-wrapper label{
+    font-size: 12px;
+    top: 0;
+}
+.profile-blog .change-password p{
+    margin-top: 19px;
+    font-size: 14px;
+}
+.choose-institution mat-select ::ng-deep .mat-select-trigger{
+    font-size: 16px;
+}
+.tariff-plan{
+    padding-left: 0;
+}
+/* .button-bottom{
+    display: inline-block;
+    margin-left: 30px;
+} */
+.button-bottom button{
+    padding: 0 35px;
+    font-size:16px; 
+    margin-top: 15px;
 }
 .profile-blog .tariff-plan li:nth-child(odd),
 .profile-blog .profile-share li:nth-child(odd) {
@@ -63,6 +94,19 @@
 .profile-blog .notifications{
     margin-top: 15px;
 }
+.profile-blog .notifications p{
+    margin-bottom: 0;
+    margin-top: 15px;
+    font-size: 17px;
+}
+.profile-blog mat-tab-group ::ng-deep .mat-tab-body-wrapper .mat-tab-body-content{
+    overflow: hidden;
+}
+.error{
+    font-size: 17px;
+    text-align: center;
+    color: red;
+  }
 @media only screen and (max-width: 599px) {
     .notifications > div,
     .profile-blog .tariff-plan li,

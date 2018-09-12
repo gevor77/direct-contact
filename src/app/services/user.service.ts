@@ -1,12 +1,12 @@
-import {Injectable} from '@angular/core';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import { Injectable} from '@angular/core';
+import { BehaviorSubject} from 'rxjs/BehaviorSubject';
 import { filter } from 'rxjs/operators';
-
+import { HttpService } from './http.service';
 @Injectable()
 export class UserService {
   user = new BehaviorSubject<any>(null);
 
-  constructor() {
+  constructor(private http: HttpService,) {
   }
 
   get userAsync() {
@@ -21,6 +21,21 @@ export class UserService {
     return !!this.user
     
   }
+  
+  updateMessagesInfo(info, id){    
+    return this.http.put('/messages/updatemessage/'+id,
+    {
+      status:info
+    })    
+  }
+  updatNotyficationInfo(info, id){    
+    return this.http.put('/profiles/' + id)
+    
+  }
+
+  getProfileInfo(id){     
+    return this.http.get(`/profiles/${id}`)
+  }  
 
   setUser(a) {
     this.user.next(a);

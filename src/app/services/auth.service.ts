@@ -12,38 +12,35 @@ export class AuthService {
 
   urlOnlyForOauth = appConfig.apiOauth;
   apiUrl = appConfig.apiUrl;
-  isLoggedIN = new BehaviorSubject(false);;
+  isLoggedIN = new BehaviorSubject(false);
 
   constructor(
     private userService: UserService,
     private httpService: HttpService,
     private http: HttpClient,
   ) {
-  
+
   }
 
-  signInUser(email: string, password: string){
+  signInUser(email: string, password: string) {
     return this.http.post(this.urlOnlyForOauth, {
-      "data": {
-        "type": "user",
-        "attributes": {
-          "login": email,
-          "password": password
-        }
-      }
-     } );
-  }
-
-  recoveryPassword(email: string){
-    return this.http.post(`${this.apiUrl}/send-link-reset-password`, {
-      email: email,
+      "type": "user",
+      "login": email,
+      "password": password
     });
   }
 
-  newPassword(password: string, key: string) {
-    return this.http.post(`${this.apiUrl}/change-password-by-link`, {
-      password: password,
-      key: key
+  recoveryPassword(email: string) {
+    return this.http.post(`${this.apiUrl}/users/sendemail`, {      
+      email: email,
+    });    
+  }
+
+  newPassword(password: string, email: any, token: any) {  
+    return this.http.post(`${this.apiUrl}/users/resetpassword`, {
+      new_password: password,
+      email: email,
+      token: token
     });
   }
 
@@ -51,7 +48,7 @@ export class AuthService {
     return this.httpService.post('/user-register', user);
   }
 
-  addData(url: string, body){
+  addData(url: string, body) {
     return this.http.post('/' + url, body);
   }
 
@@ -69,7 +66,7 @@ export class AuthService {
   getUser(email) {
     return Observable.create(observer => {
       this.httpService.get(`/users?filter[0][type]=eq&filter[0][field]=email&filter[0][value]=${email}`)
-        .subscribe( (res: any) => {
+        .subscribe((res: any) => {
           const user = res && res.body && res.body._embedded && res.body._embedded.user && res.body._embedded.user[0];
 
           if (user) {
@@ -86,7 +83,7 @@ export class AuthService {
 
   isLogged() {
     let auth = JSON.parse(localStorage.getItem('auth'));
-    let token = auth ? !!auth.data.attributes.token : false;
+    let token = auth ? !auth.token : false;
     this.isLoggedIN.next(token);
     return token;
   }

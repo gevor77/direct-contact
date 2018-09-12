@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <h2>Պրոֆիլ</h2>
-      <form class="example-form" [formGroup]="profiles" (ngSubmit)="onSubmit()">
+      <div *ngIf="profile">
         <mat-tab-group fxFlex.sm="100" fxFlex.xs="100">
           <mat-tab>
             <ng-template mat-tab-label>
@@ -14,119 +14,122 @@
                   <p>ՀԵՌԱԽՈՍԱՀԱՄԱՐԸ</p>
                 </div>
                 <div fxFlex="30">
-                  <mat-form-field class="example-full-width">
-                    <input matInput value="" formControlName="phoneNumber" placeholder="+7 (987) 654-32-10">
-                  </mat-form-field>
+                  <p>{{profile.body.phone_number}}</p>
                 </div>
               </li>
-              <li fxLayout="row">
-                <p fxFlex="70" fxFlex.xs="100" fxFlex.sm="100">Ընթացիկ մնացորդը</p>
-                <span fxFlex="30" fxFlex.xs="100" fxFlex.sm="100">0 рублей</span>
-              </li>
+              <!-- <li fxLayout="row">
+                      <p fxFlex="70" fxFlex.xscount_non_tarrif_sms="100" fxFlex.sm="100">Ընթացիկ մնացորդը</p>
+                      <span fxFlex="30" fxFlex.xs="100" fxFlex.sm="100">0 рублей</span>
+                    </li> -->
               <li fxLayout="row">
                 <p fxFlex="70" fxFlex.xs="100" fxFlex.sm="100">ՍԱԿԱԳԻՆԸ ՎՃԱՐԵԼ Է</p>
-                <span fxFlex="30" fxFlex.xs="100" fxFlex.sm="100">2020-11-30 00:00:00</span>
+                <span fxFlex="30" fxFlex.xs="100" fxFlex.sm="100">{{profile.body.tariif_paid_to}}</span>
               </li>
-              <li fxLayout="row">
-                <p fxFlex="70" fxFlex.xs="100" fxFlex.sm="100">Չհրապարակված SMS-ների քանակությունը</p>
-                <span fxFlex="30" fxFlex.xs="100" fxFlex.sm="100">55</span>
-              </li>
-              <li fxLayout="row">
-                <p fxFlex="70" fxFlex.xs="100" fxFlex.sm="100">Արժեքը SMS</p>
-                <span fxFlex="30" fxFlex.xs="100" fxFlex.sm="100"> 2 рублей</span>
-              </li>
+              <!-- <li fxLayout="row">
+                      <p fxFlex="70" fxFlex.xs="100" fxFlex.sm="100">Արժեքը SMS</p>
+                      <span fxFlex="30" fxFlex.xs="100" fxFlex.sm="100"> 2 рублей</span>
+                    </li> -->
             </ul>
           </mat-tab>
+
           <mat-tab label="Հաստատությունները">
-            <h4 class="managment">Ինստիտուտների կառավարում</h4>
-            <ul class="managment-institutions">
-              <li>
-                РЕСТОРАН АЙВЕНГО
-              </li>
-              <li fxLayout="row">
-                <p fxFlex="60">Աշխարհագրական կոորդինատները</p>
-                <span fxFlex="40">
-                  <mat-form-field class="example-full-width">
-                    <input matInput value="" formControlName="courds" placeholder="44.56853870688657, 2.052785500000009">
-                  </mat-form-field>
-                </span>
-              </li>
-              <li fxLayout="row">
-                <p fxFlex="60">Կարգավիճակը</p>
-                <span fxFlex="40">
-                  <mat-form-field fxFlex="60">
-                    <mat-select panelClass="example-panel">
-                      <mat-option value="red">Աշխատում է</mat-option>
-                      <mat-option value="green">Չի Աշխատում</mat-option>
-                    </mat-select>
-                  </mat-form-field>
-                </span>
-              </li>
-            </ul>
+            <form class="example-form" [formGroup]="profiles" (ngSubmit)="onSubmit(profiles)">
+              <h4 class="managment">Ընկերությունների կառավարում</h4>
+            <ul class="managment-institutions">   
+                <li fxLayout="row">
+                  <p fxFlex="60">Ակտիվ է Միչեվ</p>
+                  <span fxFlex="40">
+                    <div fxFlex="60">
+                      <p>{{ profile.body.tariif_paid_to }}</p>
+                    </div>
+                  </span>
+                </li>
+                <li fxLayout="row">
+                  <p fxFlex="60">Ընկերության Կոդը</p>
+                  <span fxFlex="40">
+                    <p>{{ profile.body.company_code }}</p>
+                    <mat-form-field fxFlex="60">
+                      <input matInput placeholder="Ընկերության Կոդը" type="text" formControlName="companyCode" required>
+                    </mat-form-field>
+                  </span>
+                </li>
+                <li fxLayout="row">
+                  <p fxFlex="60">Ընկերության Անվանումը</p>
+                  <span fxFlex="40">
+                      <p>{{ profile.body.company_name }}</p>
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Ընկերության Անվանումը" type="text" formControlName="companyName" required>
+                    </mat-form-field>
+                  </span>
+                </li>
+              </ul>
+              <p class="error" *ngIf="erroLogin">Սխալ գաղտնաբառ</p>
+              <div class="text-center button-bottom">
+                <button mat-button [disabled]="!profiles.valid" type="submit" class="btn btn-success">Պահել</button>
+              </div>
+            </form>
           </mat-tab>
-          <mat-tab label="Հաշվեկշիռը">
-            <div class="balance">
-              <h4>Ընթացիկ մնացորդը</h4>
-              <p>0 рублей</p>
-            </div>
-          </mat-tab>
+
           <mat-tab label="Սակագնային պլան">
             <ul class="tariff-plan">
               <li fxLayout="row">
                 <p fxFlex="70">ՍԱԿԱԳՆԱՅԻՆ Պլան</p>
                 <span fxFlex="30">
-                  <mat-form-field fxFlex="60">
-                    <mat-select panelClass="example-panel">
-                      <mat-option value="red">Դեմո</mat-option>
-                      <mat-option value="green">Աշխատում</mat-option>
-                    </mat-select>
-                  </mat-form-field>
+                  <div fxFlex="60">
+                    <p>{{profile.body.tariff_plan}}</p>
+                  </div>
                 </span>
               </li>
               <li fxLayout="row">
                 <p fxFlex="70">ՍԱԿԱԳԻՆԸ ՎՃԱՐԵԼ է</p>
-                <span fxFlex="30">2020-11-30 00:00:00</span>
-              </li>
-              <li fxLayout="row">
-                <p fxFlex="70">Չհրապարակված SMS-ների քանակությունը</p>
-                <span fxFlex="30">55</span>
+                <span fxFlex="30">{{profile.body.tariif_paid_to}}</span>
               </li>
             </ul>
           </mat-tab>
           <mat-tab label="Կարգավորումներ">
-            <div class="change-password">
-              <h4>Փոխել գաղտնաբառը</h4>
-              <mat-form-field class="example-full-width">
-                <input matInput type="password" value="" formControlName="password" placeholder="ZfynjwRSgP6P">
-              </mat-form-field>
-            </div>
-            <div class="notifications">
-              <h4>Հետադարձ կապի ծանուցումներ:</h4>
-              <div fxLayout="row">
-                <span fxFlex="40" fxFlex.xs="100">Ընտրեք հաստատություն</span>
-                <mat-form-field fxFlex="60" fxFlex.xs="100">
-                  <mat-select panelClass="example-panel">
-                    <mat-option value="red">Իսկական</mat-option>
-                    <mat-option value="green">Դեմո</mat-option>
-                  </mat-select>
-                </mat-form-field>
+            <form class="example-form" [formGroup]="editpass" (ngSubmit)="change(editpass)">
+              <div class="change-password" fxLayout="row">
+                <p fxFlex="60">Փոխել գաղտնաբառը</p>
+                <div fxLayout="column" fxFlex="40">
+                  <mat-form-field class="example-full-width" fxFlex="100">
+                    <input matInput type="password" formControlName="password" placeholder="ZfynjwRSgP6P"
+                    password="true" required>
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width" fxFlex="100">
+                    <input matInput type="password" formControlName="confpas" placeholder="ZfynjwRSgP6P"
+                    password="true" required>
+                  </mat-form-field>
+                  <p class="error" *ngIf="erroLogin">Սխալ գաղտնաբառ</p>
+                  <div class="text-center button-bottom">
+                    <button mat-button [disabled]="!profiles.valid" class="btn btn-success">Պահել</button>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="choose-institution" fxLayout="row">
-              <span fxFlex="40" fxFlex.xs="100">Ինչպես ստանալ ծանուցումներ</span>
-              <mat-form-field fxFlex="60" fxFlex.xs="100">
-                <mat-select panelClass="example-panel">
-                  <mat-option value="red">Смс</mat-option>
-                  <mat-option value="green">Телеграмм</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
+            </form>
+              <div class="notifications">
+                <h4>Հետադարձ կապի ծանուցումներ:</h4>
+                <div fxLayout="row">
+                  <span fxFlex="40" fxFlex.xs="100">Ընտրեք հաստատություն</span>
+                  <div fxFlex="60" fxFlex.xs="100">
+                    <p class="text-right">{{profile.body.company_name}}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="choose-institution" fxLayout="row">
+                <span fxFlex="40" fxFlex.xs="100">Ինչպես ստանալ ծանուցումներ</span>
+                <form [formGroup]="notyficationForm">
+                  <mat-form-field fxFlex="60" fxFlex.xs="100">
+                    <mat-select panelClass="example-panel" placheholder="Ծանուցումներ" formControlName="notyficationOpt"
+                    (selectionChange)="getNotification(selected)" [ngClass]="selected" [(value)]="selected">
+                      <mat-option value="Հաղորդագրություն">Հաղորդագրություն</mat-option>
+                      <mat-option value="Էլ-Փոստ">Էլ-Փոստ</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </form>
+              </div>
           </mat-tab>
         </mat-tab-group>
-        <div class="text-center">
-          <button mat-button [disabled]="!profiles.valid" type="submit" class="btn btn-success">Պահել</button>
-        </div>
-      </form>
+      </div>
     </div>
   </div>
 </div>

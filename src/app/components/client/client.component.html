@@ -4,72 +4,77 @@
             <h2>Գրառումներ</h2>
             <mat-toolbar class="client client_margine">
                 <mat-toolbar-row class="client_block" fxLayout.xs="column" fxLayout.sm="column">
-                    <form fxFlex.xs="100" class="example-form" fxFlex="30">
-                        <button mat-button routerLink="/client" class="btn down_btn btn-success">Ներբեռնեք զեկույց</button>
+                    <form fxFlex.xs="100" class="example-form" fxFlex="30" [formGroup]="downloadReport">
+                        <div>
+                            <button mat-button (click)="download()" class="btn down_btn btn-success">Ներբեռնեք զեկույց</button>
+                            <mat-form-field color="accent">
+                                <mat-label>Սկիզբ</mat-label>
+                                <input matInput [matDatepickerFilter]="myFilter" formControlName="dateStart" [matDatepicker]="picker1">
+                                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                <mat-datepicker #picker1></mat-datepicker>
+                            </mat-form-field>
 
-                        <mat-form-field color="accent">
-                            <mat-label>Սկիզբ</mat-label>
-                            <input matInput [matDatepicker]="picker1">
-                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-                            <mat-datepicker #picker1></mat-datepicker>
-                        </mat-form-field>
-
-                        <mat-form-field color="accent">
-                            <mat-label>Ավարտ</mat-label>
-                            <input matInput [matDatepicker]="picker2">
-                            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-                            <mat-datepicker #picker2 color="primary"></mat-datepicker>
-                        </mat-form-field>
+                            <mat-form-field color="accent">
+                                <mat-label>Ավարտ</mat-label>
+                                <input matInput formControlName="dateEnd" [matDatepicker]="picker2">
+                                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                <mat-datepicker #picker2 color="primary"></mat-datepicker>
+                            </mat-form-field>
+                        </div>
                         <p class="entertainment">ԺԱՄԱՆՑ</p>
                         <div class="checkbox">
-                            <label>
-                                <input type="checkbox" checked="checked"> РЕСТОРАН АЙВЕНГО
-                            </label>
+                            <h6>{{profiles.company_name}}</h6>
                         </div>
                     </form>
-                    <mat-radio-group class="mat_group" fxFlex="30" fxFlex.xs="100">
-                        <mat-list>
-                            <mat-list-item>
-                                <mat-radio-button matLine checked value="1">Բոլոր հաղորդագրությունները</mat-radio-button>
-                                <mat-radio-button matLine value="2">Ձեռք բերված չէ</mat-radio-button>
-                            </mat-list-item>
-                        </mat-list>
-                    </mat-radio-group>
-                    <mat-radio-group class="mat_group" fxFlex.xs="100" fxFlex="40">
-                        <mat-list>
-                            <mat-list-item>
-                                <mat-radio-button matLine checked value="1">Բոլոր մակնիշները</mat-radio-button>
-                            </mat-list-item>
-                            <div class="client-brends">
-                                <mat-radio-button matLine value="2">
-                                    <span class="glyphicon glyphicon-question-sign"></span>
-                                </mat-radio-button>
-                                <mat-radio-button matLine value="3">
-                                    <span class="glyphicon glyphicon-remove-sign"></span>
-                                </mat-radio-button>
-                                <mat-radio-button matLine value="4">
-                                    <span class="glyphicon glyphicon-ok-sign"></span>
-                                </mat-radio-button>
-                                <mat-radio-button matLine value="5">
-                                    <span class="glyphicon glyphicon-heart"></span>
-                                </mat-radio-button>
-                                <mat-radio-button matLine value="6">
-                                    <span class="glyphicon glyphicon-info-sign"></span>
-                                </mat-radio-button>
-                            </div>
-                        </mat-list>
+                    <div>
+                        <form [formGroup]="clientallmessages">
+                            <mat-radio-group class="mat_group" fxFlex="30" fxFlex.xs="100" formControlName="dataAllmessage" (change)="messagedata()">
+                                <mat-list>
+                                    <mat-list-item>
+                                        <mat-radio-button matLine checked value="allm">Բոլոր հաղորդագրությունները</mat-radio-button>
+                                        <mat-radio-button matLine value="unfinished">Անպատասխան</mat-radio-button>
+                                    </mat-list-item>
+                                </mat-list>
+                            </mat-radio-group>
+                        </form>
+                    </div>
+                    <form [formGroup]="fbrands">
+                        <mat-radio-group class="mat_group" fxFlex.xs="100" fxFlex="40" formControlName="fbrandIcons" (change)="allbrands()">
+                            <mat-list>
+                                <mat-list-item>
+                                    <mat-radio-button matLine checked value="all">Բոլոր մակնիշները</mat-radio-button>
+                                </mat-list-item>
+                                <div class="client-brends">
+                                    <mat-radio-button matLine value="question">
+                                        <span class="glyphicon glyphicon-question-sign"></span>
+                                    </mat-radio-button>
+                                    <mat-radio-button matLine value="claim">
+                                        <span class="glyphicon glyphicon-remove-sign"></span>
+                                    </mat-radio-button>
+                                    <mat-radio-button matLine value="offer">
+                                        <span class="glyphicon glyphicon-ok-sign suggestion "></span>
+                                    </mat-radio-button>
+                                    <mat-radio-button matLine value="thankyou">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </mat-radio-button>
+                                    <mat-radio-button matLine value="none">
+                                        <span class="glyphicon glyphicon-info-sign"></span>
+                                    </mat-radio-button>
+                                </div>
+                            </mat-list>
 
-                    </mat-radio-group>
+                        </mat-radio-group>
+                    </form>
                 </mat-toolbar-row>
             </mat-toolbar>
 
             <div class="client_margine client_account clinet_sms">
                 <p>
                     Բարի գալուստ հաշիվ: Դուք կարող եք ձեր կարծիքը ուղարկել հետեւյալ համարին.
-                    <strong>+7 (931) 287-07-39</strong>, ռեստորանի Իվանխոի համար
+                    <strong>{{profiles.phone_number}}</strong>, ռեստորան {{profiles.company_name}} համար
                 </p>
             </div>
-            <app-message *ngFor="let messages of msg" fxFlex="100"></app-message>
+            <app-message [filter]="myFilter" [unfilter]="myAnswer" [messages]="msgs" *ngFor="let msgs of messages" fxFlex="100"></app-message>
 
         </div>
     </div>

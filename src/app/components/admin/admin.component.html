@@ -1,0 +1,76 @@
+<div class="admin-page">
+
+  <h2 class="text-center">Ադմինիստրացիա</h2>
+  <div>
+    <table class="table table-striped" [mfData]="profiles" #mf="mfDataTable" [mfRowsOnPage]="12">
+      <thead>
+        <tr>
+          <th style="width: 4%">
+            <mfDefaultSorter by="id">Id</mfDefaultSorter>
+          </th>
+          <th style="width: 7%">
+            <mfDefaultSorter by="notification_type">Էլ-Փոստ</mfDefaultSorter>
+          </th>
+          <th style="width: 7%">
+            <mfDefaultSorter by="company_code">Ընկերության Կոդը</mfDefaultSorter>
+          </th>
+          <th style="width: 10%">
+            <mfDefaultSorter by="company_name">Ընկերության Անվանումը</mfDefaultSorter>
+          </th>
+          <th style="width: 10%">
+            <mfDefaultSorter by="tariff_plan">ՍԱԿԱԳՆԱՅԻՆ Պլան</mfDefaultSorter>
+          </th>
+          <!-- <th style="width: 10%">
+            <mfDefaultSorter by="notification_type">Ինչպես ստանալ ծանուցումներ</mfDefaultSorter>
+          </th> -->
+          <!-- <th style="width: 10%">
+            <mfDefaultSorter by="tariif_paid_to">ՍԱԿԱԳԻՆԸ ՎՃԱՐԵԼ Է</mfDefaultSorter>
+          </th> -->
+          <th style="width: 10%">
+            <mfDefaultSorter by="tariif_paid_to">Ակտիվ է Միչեվ</mfDefaultSorter>
+          </th>
+          <th style="width: 10%">
+            <mfDefaultSorter by="message">Հաղորդագրություններ</mfDefaultSorter>
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let profile of mf.data">
+          <td>{{profile.id}}</td>
+          <td>{{profile.notification_type}}</td>
+          <td>{{profile.company_code}}</td>
+          <td>{{profile.company_name}}</td>
+          <td>
+            {{profile.tariff_plan}}
+              <mat-form-field>
+                <mat-select panelClass="example-panel" placheholder="Ծանուցումներ" 
+                (selectionChange)="vNotification(profile.id)" [formControl]="selectdata">
+                  <mat-option value="demo">Դեմո</mat-option>
+                  <mat-option value="active">Ակտիվ</mat-option>
+                </mat-select>
+              </mat-form-field>
+          </td>
+          <!-- <td>{{profile.notification_type}}</td> -->
+          <!-- <td>{{profile.tariif_paid_to}}</td> -->
+
+          <td>
+            <mat-form-field>
+              <input matInput value="{{profile.tariif_paid_to}}" (dateChange)="changeDate(profile.id, e)" #e [matDatepicker]="picker" placeholder="{{profile.tariif_paid_to}}">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </td>
+          <td><a routerLink="/profiles-admin/{{profile.id}}"><span class="glyphicon glyphicon-envelope"></span></a></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4">
+            <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>

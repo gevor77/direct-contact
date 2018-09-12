@@ -15,6 +15,9 @@
 span.glyphicon-question-sign{
   color: #8a6d3b;
 }
+.suggestion{
+  color: #2f7543;
+}
 .client_block form .entertainment{
   text-transform: uppercase;
   margin: 10px 0;
@@ -33,14 +36,10 @@ span.glyphicon-question-sign{
 }
 .client .mat_group mat-radio-button{
   font-family: 'Raleway', sans-serif;
+  margin-right: 7px;
   font-size: 13px;
   color: #555;
 }
-/* .input_form{
-  background: #fff;
-  border: 1px solid #ccc;
-  padding-left: 5px;
-} */
 .example-form button,
 .example-form mat-form-field{
   display: block;
@@ -136,6 +135,17 @@ span.glyphicon-info-sign{
 }
 .client_block .client-brends{
   padding-left: 16px;
+}
+.client_block .mat_group ::ng-deep .mat-radio-label .mat-radio-outer-circle{
+  width: 15px;
+  height: 15px;
+}
+.client_block .mat_group ::ng-deep .mat-radio-label .mat-radio-container{
+  width: 13px;
+}
+.client_block .mat_group ::ng-deep .mat-radio-label .mat-radio-inner-circle{
+  width: 15px;
+  height: 15px;
 }
 
 @media only screen and (max-width: 959px) {

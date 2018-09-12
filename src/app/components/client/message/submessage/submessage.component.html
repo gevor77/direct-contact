@@ -1,0 +1,66 @@
+<div class="client_wrap">
+    <div class="alert alert-grey client_grey" fxLayout="row">
+      <div fxFlex="9" fxFlex.xs="100">
+        <div class="client_span">
+          <form class="example-form" [formGroup]="questions">
+            <mat-form-field>
+              <mat-select [class]="message.status" [ngClass]="selected" [(value)]="selected" formControlName="selectIcons" panelClass="example-panel"
+                (selectionChange)="onIcons(selected)">
+                <mat-option value="none">
+                  <span class="glyphicon glyphicon-info-sign"></span>
+                  Նշված չէ
+                </mat-option>
+                <mat-option value="question">
+                  <span class="glyphicon glyphicon-question-sign"></span>
+                  Հարց
+                </mat-option>
+                <mat-option value="claim">
+                  <span ngClass="glyphicon glyphicon-remove-sign"></span>
+                  Բողոքը
+                </mat-option>
+                <mat-option value="offer">
+                  <span ngClass="glyphicon glyphicon-ok-sign suggestion"></span>
+                  Առաջարկ
+                </mat-option>
+                <mat-option value="thankyou">
+                  <span class="glyphicon glyphicon-heart"></span>
+                  Շնորհակալություն
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </form>
+        </div>
+      </div>
+      <div class="border_left" fxFlex="91" fxFlex.xs="100">
+        {{ message.body }}
+        <div class="client-msg-time">
+          <small>
+            {{message.date_sent}}
+          </small>
+        </div>
+        <div class="{{message.id}} client-msg">
+          <mat-icon *ngIf="message.replies.length == 0" (click)="addMessage()">message</mat-icon>
+        </div>
+      </div>
+    </div>
+    <div class="client-add-msg alert alert-warning margin-bottom-15" *ngIf="!(message.reply && message.replies)" [ngClass]="status ? 'success' : 'danger'">
+      <form class="example-form" [formGroup]="cabinet">
+        <mat-form-field class="example-full-width" fxFlex="80" fxFlex.xs="100">
+          <textarea matInput formControlName="addText" placeholder="Թողնել մեկնաբանություն"></textarea>
+        </mat-form-field>
+        <button fxFlex="20" fxFlex.xs="100" mat-button color="primary" (click)="addComment(message.id)">Ուղարկել</button>
+      </form>
+    </div>
+    <div class="row">
+      <div class="border_bottom" *ngIf="message.replies[0]" fxFlex="95" fxFlexOffset="5">
+        <div class="alert alert-warning margin-bottom-15">
+          {{ message.replies[0].body }}
+          <div class="reply-date">
+            <small>
+              {{ message.replies[0].date_sent }}
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

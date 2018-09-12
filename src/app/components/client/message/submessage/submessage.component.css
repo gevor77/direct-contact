@@ -1,0 +1,127 @@
+.client_wrap .client_span mat-form-field mat-select ::ng-deep .mat-select-value{
+    display: none;
+} 
+.client_wrap .client_span mat-form-field mat-select ::ng-deep .mat-select-trigger{
+    margin: 8px 35px;
+}
+::ng-deep .mat-select-panel {
+  min-width: 100% !important;
+}
+::ng-deep .mat-select-panel .mat-option{
+  height: 40px !important;
+  font-size: 15px !important;
+}
+.client_wrap .client_span mat-form-field{
+    width: 100%;
+    padding-right: 7px;
+}
+  .client_wrap{
+    margin: 15px 0;
+    padding:7px 0; 
+  }
+
+  mat-select.question{
+    background-image:url('../../../../../assets/aterosolutions.png');
+    width: 40px;
+    height: 33px;
+    background-repeat: no-repeat;
+    background-position: 3px;
+  }
+  mat-select.claim{
+    background-image:url('../../../../../assets/aterosolutions.png');
+    width: 40px;
+    height: 33px;
+    background-repeat: no-repeat;
+    background-position: -60px;
+  }
+  mat-select.offer{
+    background-image:url('../../../../../assets/aterosolutions.png');
+    width: 40px;
+    height: 33px;
+    background-repeat: no-repeat;
+    background-position: -122px;
+  }
+  mat-select.thankyou{
+    background-image:url('../../../../../assets/aterosolutions.png');
+    width: 40px;
+    height: 33px;
+    background-repeat: no-repeat;
+    background-position: -184px;
+  }
+  mat-select.none{
+    background-image:url('../../../../../assets/aterosolutions.png');
+    width: 40px;
+    height: 33px;
+    background-repeat: no-repeat;
+    background-position: -244px;
+  }
+    
+  mat-select .mat-form-field-infix{
+      width: initial;
+  }
+  span.glyphicon-heart,
+span.glyphicon-info-sign{
+  color:#31708f;
+}
+span.glyphicon-remove-sign{
+  color:#a94442;
+}
+span.glyphicon--ok-sign{
+  color:#3c763d;
+}
+.client_grey{
+border: 1px solid #ddd;
+}
+.border_left{
+    border-left: 1px dotted #ddd;
+    padding-left: 15px;
+    font-size: 14px;
+}
+.border_left .client-msg{
+    position: absolute;
+    cursor: pointer;
+    right: 15px;
+    top: 40px;
+}
+.client-add-msg{
+    display: none;
+}
+.client-add-msg.success{
+    display: block;
+}
+.client-add-msg.success textarea{
+    resize: none;
+    font-size: 15px;
+}
+.client-add-msg.success mat-form-field{
+    width: 80%;
+} 
+.client-add-msg.success mat-form-field ::ng-deep .mat-form-field-label-wrapper label{
+    font-size: 15px;
+}
+span.glyphicon-question-sign{
+    color: #8a6d3b;
+}
+.margin-bottom-15{
+    margin-right: 15px;
+}
+.suggestion{
+    color: #2f7543;
+  }
+.border_bottom{
+    font-size: 14px;
+}
+.client_wrap .reply-date,
+.client_wrap .client-msg-time{
+    position: absolute;
+    top: -18px;
+    right: 15px;
+    padding: 0px 10px;
+    background-color: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+    font-size: 16px;
+}
+.client_wrap p{
+    font-size: 14px;
+}

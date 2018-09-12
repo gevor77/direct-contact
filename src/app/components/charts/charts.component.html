@@ -29,17 +29,6 @@
               (chartClick)="chartClicked($event)"></canvas>
           </div>
         </div>
-        <div class="dynamics-messages">
-          <div class="panel"></div>
-          <div>
-            <h5>Հաղորդագրությունների թվի դինամիկան</h5>
-            <div style="display: block">
-              <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend"
-                [chartType]="barChartType" (chartHover)="chartHoveredBar($event)" (chartClick)="chartClickedBar($event)"></canvas>
-            </div>
-            <button (click)="randomize()">Update</button>
-          </div>
-        </div>
       </div>
     </div>
   </div>

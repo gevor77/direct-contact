@@ -1,14 +1,22 @@
 <mat-toolbar color="primary" class="header">
   <div class="container">
     <div class="row">
-      <a routerLink="/">
+      <a *ngIf="isLoggedIn && userId == 1" routerLink="/admin">
+        <img src="assets/logo-direct.png" alt="">
+      </a>
+      <a *ngIf="isLoggedIn && userId != 1" routerLink="/cabinet">
+        <img src="assets/logo-direct.png" alt="">
+      </a>
+      <a *ngIf="!isLoggedIn" routerLink="/">
         <img src="assets/logo-direct.png" alt="">
       </a>
       <div class="header_bottom">
+        <button *ngIf="!isLoggedIn" mat-button (click)="openDialog()">Վերականգնել Գաղտնաբառը</button>
         <a *ngIf="!isLoggedIn" routerLink="">Մուտք</a>
-        <a *ngIf="isLoggedIn" routerLink="cabinet">Կաբինետ</a>
-        <a *ngIf="isLoggedIn" routerLink="charts">Գրաֆիկա</a>        
-        <a *ngIf="isLoggedIn" routerLink="profile">Պրոֆիլ</a>
+        <a *ngIf="isLoggedIn && userId != 1" routerLink="cabinet">Կաբինետ</a>
+        <a *ngIf="isLoggedIn && userId != 1" routerLink="charts">Գրաֆիկա</a>        
+        <a *ngIf="isLoggedIn && userId != 1" routerLink="profile">Պրոֆիլ</a>
+        <a *ngIf="isLoggedIn && userId == 1" routerLink="admin">Admin</a>
         <a *ngIf="isLoggedIn" (click)="logout()" routerLink="">Ելք</a>
       </div>
     </div>
@@ -26,65 +34,28 @@
 
       <div class="left-row" fxLayout="column" fxLayoutAlign="left" fxFlex="70" fxFlex.xs="100">
         <div fxFlex="100">
-          <a routerLink="/" fxFlex="17" fxFlex.xs="100" fxFlex.sm="30" fxFlex.md="20">
+          <!-- <a routerLink="/" fxFlex="17" fxFlex.xs="100" fxFlex.sm="30" fxFlex.md="20">
+            <img src="assets/logo-direct.png" alt="">
+          </a> -->
+          <a *ngIf="isLoggedIn && userId == 1" routerLink="/admin" fxFlex="17" fxFlex.xs="100" fxFlex.sm="30" fxFlex.md="20">
+            <img src="assets/logo-direct.png" alt="">
+          </a>
+          <a *ngIf="isLoggedIn && userId != 1" routerLink="/cabinet" fxFlex="17" fxFlex.xs="100" fxFlex.sm="30" fxFlex.md="20">
+            <img src="assets/logo-direct.png" alt="">
+          </a>
+          <a *ngIf="!isLoggedIn" routerLink="/" fxFlex="17" fxFlex.xs="100" fxFlex.sm="30" fxFlex.md="20">
             <img src="assets/logo-direct.png" alt="">
           </a>
           <p class="wrap-p" fxFlex="83" fxFlex.md="80" fxFlex.sm="70" fxFlex.xs="100">Մենք անկեղծորեն հավատում ենք, որ հաճախորդների ուղղված բիզնեսը մեր ապագան է:</p>
         </div>
-  
-        <div class="copy" fxLayoutAlign="center" fxFlex="100">
-  
-            <mat-list fxFlex="100">
-              <mat-list-item>
-                <h3 matLine> Home </h3>
-              </mat-list-item>
-              <mat-list-item>
-                <h3 matLine>Function</h3>
-              </mat-list-item>
-              <mat-list-item>
-                <h3 matLine>Function</h3>
-              </mat-list-item>
-            </mat-list>
-            <mat-list fxFlex="100">
-              <mat-list-item>
-                <h3 matLine> Home </h3>
-              </mat-list-item>
-              <mat-list-item>
-                <h3 matLine>Function</h3>
-              </mat-list-item>
-              <mat-list-item>
-                <h3 matLine>Function</h3>
-              </mat-list-item>
-            </mat-list>
-            <mat-list fxFlex="100">
-              <mat-list-item>
-                <h3 matLine> Home </h3>
-              </mat-list-item>
-              <mat-list-item>
-                <h3 matLine>Function</h3>
-              </mat-list-item>
-              <mat-list-item>
-                <h3 matLine>Function</h3>
-              </mat-list-item>
-            </mat-list>
-            <mat-list fxFlex="100">
-              <mat-list-item>
-                <h3 matLine> Home </h3>
-              </mat-list-item>
-              <mat-list-item>
-                <h3 matLine>Function</h3>
-              </mat-list-item>
-              <mat-list-item>
-                <h3 matLine>Function</h3>
-              </mat-list-item>
-            </mat-list>
-  
-          </div>
       </div>
     <div class="right-row" fxLayout="column" fxLayoutAlign="center" fxFlex="30" fxFlex.xs="100">
       <div class="twt_block" >
-        <div class="twt">
+        <!-- <div class="twt">
           <a class="twitter-timeline" href="https://twitter.com/gevorjan77">Tweets by TwitterDev</a>
+        </div> -->
+        <div class="fb">
+            <fb-page href="https://facebook.com/facebook/gevor.melqonyan.3/"></fb-page>
         </div>
         <div class="email_footer">
           <p>Բաժանորդագրվեք մեր նորություններին եւ պահեք մեր ընկերության մասին վերջին լուրերը:</p>
@@ -96,6 +67,15 @@
           </form>
         </div>
       </div>
+    </div>
+    <div fxFlex="100" class="footer-pages">
+      <a routerLink="">Գլխավոր էջ /</a>
+      <a href="http://direct.atero.solutions/solutions/">Պատրաստի լուծումներ /</a>
+      <a href="http://direct.atero.solutions/tariff/">Սակագին /</a>
+      <a href="http://direct.atero.solutions/our-team/">Մեր թիմը /</a>
+      <a href="http://direct.atero.solutions/cooperation/">Համագործակցություն /</a>
+      <a href="http://direct.atero.solutions/contacts/">Կոնտակտներ /</a>
+      <a href="http://direct.atero.solutions/account/">Հաշիվ</a>
     </div>
     </div>
   </div>

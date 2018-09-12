@@ -52,8 +52,14 @@
   font-size: 13px;
   padding-left: 8px;
 }
+.footer_btn mat-form-field ::ng-deep .mat-form-field-label-wrapper label{
+  top: 19px;
+  color: #666;
+  padding-left: 5px;
+  font-size: 12px;
+}
 .footer{
-  padding-top: 23px;
+  padding: 23px 0;
   background:#232d35;
   height: initial;
 }
@@ -71,6 +77,16 @@
 .footer p{
   font-size: 14px;
   float: right;
+}
+.footer-pages{
+  margin: 25px 0;
+}
+.footer-pages a{
+  color: rgba(255, 255, 255, 0.25);
+  display: inline-block;
+  padding: 0 5px;
+  text-decoration: none;
+  font-size: 14px;
 }
 @media only screen and (max-width: 992px) {
   .content-wrapper{

@@ -17,7 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { AlertModule } from 'ngx-bootstrap';
 import { FlexLayoutModule} from '@angular/flex-layout';
 import { ChartsModule } from 'ng2-charts';
-
+import { ForgotPasswordModalComponent} from './components/forgot-password-modal/forgot-password-modal.component';
 import {
   MatAutocompleteModule,
   MatButtonToggleModule,
@@ -42,6 +42,7 @@ import {
   MatTooltipModule,
   MatStepperModule,
 } from '@angular/material';
+import { ExportAsXLSXService } from './services/export-as-xlsx.service';
 import { AuthService } from './services/auth.service';
 import { HttpService } from './services/http.service';
 import { UserService } from './services/user.service';
@@ -52,13 +53,20 @@ import { MatDatepickerModule} from '@angular/material/datepicker';
 import { MessageComponent } from './components/client/message/message.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ChartModule } from 'angular-highcharts';
-
-
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
+import { AdminComponent } from './components/admin/admin.component';
+import {DataTableModule} from "angular-6-datatable";
+import { FacebookModule } from 'ngx-facebook';
+import { AdminMessagesComponent } from './components/admin-messages/admin-messages.component';
+import { SubmessageComponent } from './components/client/message/submessage/submessage.component';
 const appRoutes: Routes = [
   { path: 'cabinet', component: ClientComponent },
-  { path: 'charts',      component: ChartsComponent },
-  { path: 'profile',      component: ProfileComponent },
-  { path: '',      component: LoginComponent },
+  { path: 'charts', component: ChartsComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'change-password',  component: ChangePasswordComponent },
+  { path: 'admin', component: AdminComponent },
+  { path: 'profiles-admin/:id', component: AdminMessagesComponent},
+  { path: '', component: LoginComponent },
 ];
 
 @NgModule({
@@ -68,17 +76,24 @@ const appRoutes: Routes = [
     LoginComponent,
     ChartsComponent,
     MessageComponent,
-    ProfileComponent
+    ForgotPasswordModalComponent,
+    ProfileComponent,
+    ChangePasswordComponent,
+    AdminComponent,
+    AdminMessagesComponent,
+    SubmessageComponent,
   ],
+  entryComponents: [ForgotPasswordModalComponent],
   imports: [
     FlexLayoutModule,
     RouterModule.forRoot(
-      appRoutes
+      appRoutes,
     ),
     ReactiveFormsModule,
     FormsModule,
     BrowserModule,
     AlertModule.forRoot(),
+    FacebookModule.forRoot(),
     MatToolbarModule,
     BrowserAnimationsModule,
     MatListModule,
@@ -125,12 +140,15 @@ const appRoutes: Routes = [
     MatToolbarModule,
     ChartModule,
     MatTooltipModule,
+    DataTableModule,
+    
     ChartsModule
   ],
   providers: [
     HttpService,
     AuthService,
     UserService,
+    ExportAsXLSXService,
   ],
   bootstrap: [AppComponent]
 })
