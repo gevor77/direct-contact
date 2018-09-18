@@ -2,23 +2,83 @@
   <div class="container">
     <div class="row">
       <a *ngIf="isLoggedIn && userId == 1" routerLink="/admin">
-        <img src="assets/logo-direct.png" alt="">
+        <img src="assets/logos.png" alt="">
       </a>
       <a *ngIf="isLoggedIn && userId != 1" routerLink="/cabinet">
-        <img src="assets/logo-direct.png" alt="">
+        <img src="assets/logos.png" alt="">
       </a>
       <a *ngIf="!isLoggedIn" routerLink="/">
-        <img src="assets/logo-direct.png" alt="">
+        <img src="assets/logos.png" alt="">
       </a>
+
       <div class="header_bottom">
         <button *ngIf="!isLoggedIn" mat-button (click)="openDialog()">Վերականգնել Գաղտնաբառը</button>
         <a *ngIf="!isLoggedIn" routerLink="">Մուտք</a>
         <a *ngIf="isLoggedIn && userId != 1" routerLink="cabinet">Կաբինետ</a>
-        <a *ngIf="isLoggedIn && userId != 1" routerLink="charts">Գրաֆիկա</a>        
+        <a *ngIf="isLoggedIn && userId != 1" routerLink="charts">Գրաֆիկա</a>
         <a *ngIf="isLoggedIn && userId != 1" routerLink="profile">Պրոֆիլ</a>
         <a *ngIf="isLoggedIn && userId == 1" routerLink="admin">Admin</a>
         <a *ngIf="isLoggedIn" (click)="logout()" routerLink="">Ելք</a>
+        <mat-form-field>
+          <mat-select [(value)]="selected">
+            <mat-option value="option1">English</mat-option>
+            <mat-option value="option2">Հայերեն</mat-option>
+            <mat-option value="option3">Русский</mat-option>
+          </mat-select>
+        </mat-form-field>
       </div>
+
+      <div class="header_bottom-toggle-islogin" *ngIf="isLoggedIn && userId == 1">
+        <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <a *ngIf="isLoggedIn && userId == 1" routerLink="admin">Admin</a>
+          </button>
+          <button mat-menu-item>
+            <a *ngIf="isLoggedIn" (click)="logout()" routerLink="">Ելք</a>
+          </button>
+        </mat-menu>
+      </div>
+
+      <div class="header_bottom-toggle-islogin" *ngIf="isLoggedIn && userId != 1">
+        <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <a *ngIf="isLoggedIn && userId != 1" routerLink="cabinet">Կաբինետ</a>
+          </button>
+          <button mat-menu-item>
+            <a *ngIf="isLoggedIn && userId != 1" routerLink="charts">Գրաֆիկա</a>
+          </button>
+          <button mat-menu-item>
+            <a *ngIf="isLoggedIn && userId != 1" routerLink="profile">Պրոֆիլ</a>
+          </button>
+          <button mat-menu-item>
+            <a *ngIf="isLoggedIn" (click)="logout()" routerLink="">Ելք</a>
+          </button>
+        </mat-menu>
+      </div>
+
+      <div class="header_bottom-toggle" *ngIf="!isLoggedIn">
+        <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <button *ngIf="!isLoggedIn" mat-button (click)="openDialog()">Վերականգնել Գաղտնաբառը</button>
+          </button>
+          <button mat-menu-item>
+            <a *ngIf="!isLoggedIn" routerLink="">Մուտք</a>
+          </button>
+          <button mat-menu-item>
+            <mat-form-field>
+              <mat-select [(value)]="selected">
+                <mat-option value="option1">English</mat-option>
+                <mat-option value="option2">Հայերեն</mat-option>
+                <mat-option value="option3">Русский</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </button>
+        </mat-menu>
+      </div>
+
     </div>
   </div>
 </mat-toolbar>
@@ -32,51 +92,25 @@
   <div class="container">
     <div class="row">
 
-      <div class="left-row" fxLayout="column" fxLayoutAlign="left" fxFlex="70" fxFlex.xs="100">
+      <div class="left-row" fxLayout="column" fxLayoutAlign="left" fxFlex="70" fxFlex.xs="100" fxFlex.sm="100">
         <div fxFlex="100">
-          <!-- <a routerLink="/" fxFlex="17" fxFlex.xs="100" fxFlex.sm="30" fxFlex.md="20">
-            <img src="assets/logo-direct.png" alt="">
-          </a> -->
-          <a *ngIf="isLoggedIn && userId == 1" routerLink="/admin" fxFlex="17" fxFlex.xs="100" fxFlex.sm="30" fxFlex.md="20">
-            <img src="assets/logo-direct.png" alt="">
-          </a>
-          <a *ngIf="isLoggedIn && userId != 1" routerLink="/cabinet" fxFlex="17" fxFlex.xs="100" fxFlex.sm="30" fxFlex.md="20">
-            <img src="assets/logo-direct.png" alt="">
-          </a>
-          <a *ngIf="!isLoggedIn" routerLink="/" fxFlex="17" fxFlex.xs="100" fxFlex.sm="30" fxFlex.md="20">
-            <img src="assets/logo-direct.png" alt="">
-          </a>
-          <p class="wrap-p" fxFlex="83" fxFlex.md="80" fxFlex.sm="70" fxFlex.xs="100">Մենք անկեղծորեն հավատում ենք, որ հաճախորդների ուղղված բիզնեսը մեր ապագան է:</p>
+
+          <div fxFlex="100" class="wrap-p footer-pages">
+            <a routerLink="">Գլխավոր</a>
+            <a href="http://directcontact.am/en/directors/">Տնօրենին</a>
+            <a href="http://directcontact.am/en/customers/">Հաճախորդին</a>
+            <a href="http://directcontact.am/en/about-us/">Մեր Մասին</a>
+            <a href="http://directcontact.am/client/">Գրասենյակ</a>
+          </div>
         </div>
       </div>
-    <div class="right-row" fxLayout="column" fxLayoutAlign="center" fxFlex="30" fxFlex.xs="100">
-      <div class="twt_block" >
-        <!-- <div class="twt">
-          <a class="twitter-timeline" href="https://twitter.com/gevorjan77">Tweets by TwitterDev</a>
-        </div> -->
-        <div class="fb">
-            <fb-page href="https://facebook.com/facebook/gevor.melqonyan.3/"></fb-page>
-        </div>
-        <div class="email_footer">
-          <p>Բաժանորդագրվեք մեր նորություններին եւ պահեք մեր ընկերության մասին վերջին լուրերը:</p>
-          <form class="example-form footer_btn">
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="Մուտքագրեք ձեր փոստը" class="form-control" type="email"> 
-            </mat-form-field>
-            <button mat-button class="btn btn-success">Բաժանորդագրվեք</button>
-          </form>
+      <div class="right-row" fxLayout="column" fxLayoutAlign="center" fxFlex="30" fxFlex.xs="100" fxFlex.sm="100">
+        <div class="twt_block">
+          <div class="fb">
+            <fb-page href="https://www.facebook.com/directcontact.am/"></fb-page>
+          </div>
         </div>
       </div>
-    </div>
-    <div fxFlex="100" class="footer-pages">
-      <a routerLink="">Գլխավոր էջ /</a>
-      <a href="http://direct.atero.solutions/solutions/">Պատրաստի լուծումներ /</a>
-      <a href="http://direct.atero.solutions/tariff/">Սակագին /</a>
-      <a href="http://direct.atero.solutions/our-team/">Մեր թիմը /</a>
-      <a href="http://direct.atero.solutions/cooperation/">Համագործակցություն /</a>
-      <a href="http://direct.atero.solutions/contacts/">Կոնտակտներ /</a>
-      <a href="http://direct.atero.solutions/account/">Հաշիվ</a>
-    </div>
     </div>
   </div>
 </div>

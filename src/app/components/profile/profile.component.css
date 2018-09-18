@@ -106,12 +106,28 @@
     font-size: 17px;
     text-align: center;
     color: red;
-  }
+}
+@media only screen and (max-width: 768px) {
+    .profile-blog ::ng-deep .mat-tab-label{
+        padding: 0px 12px;
+        min-width: 50px;
+    }
+}
 @media only screen and (max-width: 599px) {
     .notifications > div,
     .profile-blog .tariff-plan li,
     .profile-blog .managment-institutions li,
     .profile-blog .profile-share li{
         display: block !important;
+    }
+    .profile-blog ::ng-deep .mat-tab-label{
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    .profile-blog ::ng-deep .mat-tab-label{
+        padding: 0px 5px;
+        font-size: 7px;
     }
 }

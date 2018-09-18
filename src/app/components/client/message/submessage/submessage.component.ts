@@ -18,6 +18,7 @@ export class SubmessageComponent implements OnInit {
   public messages = [];
   public selectIcons = {};
   public addText;
+  public selected = '';
 
   constructor(
     public http: HttpService,

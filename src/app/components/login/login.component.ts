@@ -37,12 +37,10 @@ export class LoginComponent implements OnInit {
         res => {
           localStorage.setItem('auth', JSON.stringify(res));
           this.authService.isLoggedIN.next(true);
-          // this.authService.getUser(form.controls['email'].value).safeSubscribe(this, () => {
             this.router.navigate(['/cabinet']);
-            setTimeout(()=>{
-              window.location.reload()
-            })
-          // });
+          setTimeout(()=>{
+            window.location.reload()
+          },100);
         },
         error => {
           this.showError(error.error.detail);

@@ -20,12 +20,6 @@
           <th style="width: 10%">
             <mfDefaultSorter by="tariff_plan">ՍԱԿԱԳՆԱՅԻՆ Պլան</mfDefaultSorter>
           </th>
-          <!-- <th style="width: 10%">
-            <mfDefaultSorter by="notification_type">Ինչպես ստանալ ծանուցումներ</mfDefaultSorter>
-          </th> -->
-          <!-- <th style="width: 10%">
-            <mfDefaultSorter by="tariif_paid_to">ՍԱԿԱԳԻՆԸ ՎՃԱՐԵԼ Է</mfDefaultSorter>
-          </th> -->
           <th style="width: 10%">
             <mfDefaultSorter by="tariif_paid_to">Ակտիվ է Միչեվ</mfDefaultSorter>
           </th>
@@ -41,8 +35,8 @@
           <td>{{profile.notification_type}}</td>
           <td>{{profile.company_code}}</td>
           <td>{{profile.company_name}}</td>
-          <td>
-            {{profile.tariff_plan}}
+          <td class="tarif-plan-td">
+              <span class="tarif-plan">{{profile.tariff_plan}}</span>
               <mat-form-field>
                 <mat-select panelClass="example-panel" placheholder="Ծանուցումներ" 
                 (selectionChange)="vNotification(profile.id)" [formControl]="selectdata">
@@ -51,9 +45,6 @@
                 </mat-select>
               </mat-form-field>
           </td>
-          <!-- <td>{{profile.notification_type}}</td> -->
-          <!-- <td>{{profile.tariif_paid_to}}</td> -->
-
           <td>
             <mat-form-field>
               <input matInput value="{{profile.tariif_paid_to}}" (dateChange)="changeDate(profile.id, e)" #e [matDatepicker]="picker" placeholder="{{profile.tariif_paid_to}}">

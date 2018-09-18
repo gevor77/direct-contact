@@ -2,11 +2,10 @@
   background: #232d35;
 }
 .header img{
-  width: 120px;
-  -webkit-filter: brightness(0) invert(1);
-  filter: brightness(0) invert(1);
   padding-right: 10px;
   margin-right: 7px;
+  margin-top: 12px;
+  width: 88px;
 }
 .header a{
   color: #fff;
@@ -25,10 +24,6 @@
   background-color: rgba(0,0,0,0.3);
     border-color: rgba(0,0,0,0.25) !important;
 }
-.left-row .wrap-p{
-  color: #fff;
-}
-
 .content-wrapper{
   min-height: 650px;
 }
@@ -60,8 +55,9 @@
 }
 .footer{
   padding: 23px 0;
-  background:#232d35;
   height: initial;
+  background-color: #4d4d4d;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 .footer h3{
   color: #fff;
@@ -82,19 +78,55 @@
   margin: 25px 0;
 }
 .footer-pages a{
-  color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.5);
   display: inline-block;
-  padding: 0 5px;
+  padding: 0 20px;
   text-decoration: none;
   font-size: 14px;
+}
+.header_bottom-toggle{
+  display: none;
+}
+.header_bottom-toggle-islogin{
+  display: none;
 }
 @media only screen and (max-width: 992px) {
   .content-wrapper{
     height: initial;
   }
 }
+@media only screen and (max-width: 768px) {
+  .header_bottom{
+    display: none;
+  }
+  .header_bottom-toggle-islogin,
+  .header_bottom-toggle{
+    display: block;
+    width: 69%;
+    text-align: right;  
+  }
+  ::ng-deep .mat-menu-content{
+    background: #4d4d4d;
+  }
+  ::ng-deep .mat-menu-content .mat-menu-item a{
+    text-align: center;
+    display: block;
+    color: #fff;
+  }
+}
 @media only screen and (max-width: 559px) {
   .right-row{
     padding: 10px 25px; 
+  }
+}
+@media only screen and (max-width: 414px) {
+  .header_bottom-toggle-islogin,
+  .header_bottom-toggle{
+    width: initial; 
+  }
+}
+@media only screen and (max-width: 375px) {
+  .fb{
+    overflow: hidden;
   }
 }

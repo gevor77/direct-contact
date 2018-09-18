@@ -12,6 +12,7 @@ import { HttpService } from './services/http.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  selected = 'option2';
   title = 'app';
   public isLoggedIn;
   public userId;
@@ -23,7 +24,7 @@ export class AppComponent {
     public http:HttpService,
   ) {
     let initParams: InitParams = {
-      appId: 'gevor.melqonyan.3',
+      appId: 'directcontact.am',
       xfbml: true,
       version: 'v2.8'
     };

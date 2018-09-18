@@ -15,51 +15,51 @@
     width: 100%;
     padding-right: 7px;
 }
-  .client_wrap{
+.client_wrap{
     margin: 15px 0;
     padding:7px 0; 
-  }
+}
 
-  mat-select.question{
+mat-select.question{
     background-image:url('../../../../../assets/aterosolutions.png');
     width: 40px;
     height: 33px;
     background-repeat: no-repeat;
     background-position: 3px;
-  }
-  mat-select.claim{
+}
+mat-select.claim{
     background-image:url('../../../../../assets/aterosolutions.png');
     width: 40px;
     height: 33px;
     background-repeat: no-repeat;
     background-position: -60px;
-  }
-  mat-select.offer{
+}
+mat-select.offer{
     background-image:url('../../../../../assets/aterosolutions.png');
     width: 40px;
     height: 33px;
     background-repeat: no-repeat;
     background-position: -122px;
-  }
-  mat-select.thankyou{
+}
+mat-select.thankyou{
     background-image:url('../../../../../assets/aterosolutions.png');
     width: 40px;
     height: 33px;
     background-repeat: no-repeat;
     background-position: -184px;
-  }
-  mat-select.none{
+}
+mat-select.none{
     background-image:url('../../../../../assets/aterosolutions.png');
     width: 40px;
     height: 33px;
     background-repeat: no-repeat;
     background-position: -244px;
-  }
+}
     
-  mat-select .mat-form-field-infix{
+mat-select .mat-form-field-infix{
       width: initial;
-  }
-  span.glyphicon-heart,
+}
+span.glyphicon-heart,
 span.glyphicon-info-sign{
   color:#31708f;
 }
@@ -70,7 +70,7 @@ span.glyphicon--ok-sign{
   color:#3c763d;
 }
 .client_grey{
-border: 1px solid #ddd;
+    border: 1px solid #ddd;
 }
 .border_left{
     border-left: 1px dotted #ddd;

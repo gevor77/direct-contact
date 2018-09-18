@@ -30,9 +30,14 @@ export class AdminMessagesComponent implements OnInit {
 
     this.http.get('/profiles/' + this.id + '/messages')
       .subscribe((profil: any) => {
-        this.profiles = profil.body;     
-      });
-      
+        this.profiles = profil.body;
+    });
   }
+  delete(id) {
+    this.http.delete('/messages/' + id).subscribe();
+  }
+  // checked(paddress){
+  //   console.log(paddress) 
+  // }
 
 }

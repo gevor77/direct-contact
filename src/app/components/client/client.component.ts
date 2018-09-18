@@ -17,9 +17,10 @@ export class ClientComponent implements OnInit {
   public allMessages = [];
   public unfmessage = [];
   public newdatepicker = [];
-  public myFilter = 'all';
+  public myMessageFilter = 'all';
   public myAnswer = 'allm';
-  profiles = {};
+  public myFilter;
+  profiles: any = {};
   fbrands: FormGroup;
   clientallmessages: FormGroup;
   downloadReport: FormGroup;
@@ -32,7 +33,7 @@ export class ClientComponent implements OnInit {
   }
 
   allbrands() {
-      this.myFilter = this.fbrands.get('fbrandIcons').value;      
+      this.myMessageFilter = this.fbrands.get('fbrandIcons').value;      
   }
 
   messagedata() {

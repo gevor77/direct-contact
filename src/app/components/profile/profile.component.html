@@ -6,7 +6,7 @@
         <mat-tab-group fxFlex.sm="100" fxFlex.xs="100">
           <mat-tab>
             <ng-template mat-tab-label>
-              <img src="../../../assets/share.png" alt="">
+              <img src="/client/assets/share.png" alt="">
             </ng-template>
             <ul class="profile-share">
               <li fxLayout="row">
@@ -17,25 +17,17 @@
                   <p>{{profile.body.phone_number}}</p>
                 </div>
               </li>
-              <!-- <li fxLayout="row">
-                      <p fxFlex="70" fxFlex.xscount_non_tarrif_sms="100" fxFlex.sm="100">Ընթացիկ մնացորդը</p>
-                      <span fxFlex="30" fxFlex.xs="100" fxFlex.sm="100">0 рублей</span>
-                    </li> -->
               <li fxLayout="row">
                 <p fxFlex="70" fxFlex.xs="100" fxFlex.sm="100">ՍԱԿԱԳԻՆԸ ՎՃԱՐԵԼ Է</p>
                 <span fxFlex="30" fxFlex.xs="100" fxFlex.sm="100">{{profile.body.tariif_paid_to}}</span>
               </li>
-              <!-- <li fxLayout="row">
-                      <p fxFlex="70" fxFlex.xs="100" fxFlex.sm="100">Արժեքը SMS</p>
-                      <span fxFlex="30" fxFlex.xs="100" fxFlex.sm="100"> 2 рублей</span>
-                    </li> -->
             </ul>
           </mat-tab>
 
           <mat-tab label="Հաստատությունները">
             <form class="example-form" [formGroup]="profiles" (ngSubmit)="onSubmit(profiles)">
               <h4 class="managment">Ընկերությունների կառավարում</h4>
-            <ul class="managment-institutions">   
+              <ul class="managment-institutions">
                 <li fxLayout="row">
                   <p fxFlex="60">Ակտիվ է Միչեվ</p>
                   <span fxFlex="40">
@@ -56,7 +48,7 @@
                 <li fxLayout="row">
                   <p fxFlex="60">Ընկերության Անվանումը</p>
                   <span fxFlex="40">
-                      <p>{{ profile.body.company_name }}</p>
+                    <p>{{ profile.body.company_name }}</p>
                     <mat-form-field class="example-full-width">
                       <input matInput placeholder="Ընկերության Անվանումը" type="text" formControlName="companyName" required>
                     </mat-form-field>
@@ -92,12 +84,10 @@
                 <p fxFlex="60">Փոխել գաղտնաբառը</p>
                 <div fxLayout="column" fxFlex="40">
                   <mat-form-field class="example-full-width" fxFlex="100">
-                    <input matInput type="password" formControlName="password" placeholder="ZfynjwRSgP6P"
-                    password="true" required>
+                    <input matInput type="password" formControlName="password" placeholder="Password" password="true" required>
                   </mat-form-field>
                   <mat-form-field class="example-full-width" fxFlex="100">
-                    <input matInput type="password" formControlName="confpas" placeholder="ZfynjwRSgP6P"
-                    password="true" required>
+                    <input matInput type="password" formControlName="confpas" placeholder="Confirm Password" password="true" required>
                   </mat-form-field>
                   <p class="error" *ngIf="erroLogin">Սխալ գաղտնաբառ</p>
                   <div class="text-center button-bottom">
@@ -106,27 +96,27 @@
                 </div>
               </div>
             </form>
-              <div class="notifications">
-                <h4>Հետադարձ կապի ծանուցումներ:</h4>
-                <div fxLayout="row">
-                  <span fxFlex="40" fxFlex.xs="100">Ընտրեք հաստատություն</span>
-                  <div fxFlex="60" fxFlex.xs="100">
-                    <p class="text-right">{{profile.body.company_name}}</p>
-                  </div>
+            <div class="notifications">
+              <h4>Հետադարձ կապի ծանուցումներ:</h4>
+              <div fxLayout="row">
+                <span fxFlex="40" fxFlex.xs="100">Ընտրեք հաստատություն</span>
+                <div fxFlex="60" fxFlex.xs="100">
+                  <p class="text-right">{{profile.body.company_name}}</p>
                 </div>
               </div>
-              <div class="choose-institution" fxLayout="row">
-                <span fxFlex="40" fxFlex.xs="100">Ինչպես ստանալ ծանուցումներ</span>
-                <form [formGroup]="notyficationForm">
-                  <mat-form-field fxFlex="60" fxFlex.xs="100">
-                    <mat-select panelClass="example-panel" placheholder="Ծանուցումներ" formControlName="notyficationOpt"
-                    (selectionChange)="getNotification(selected)" [ngClass]="selected" [(value)]="selected">
-                      <mat-option value="Հաղորդագրություն">Հաղորդագրություն</mat-option>
-                      <mat-option value="Էլ-Փոստ">Էլ-Փոստ</mat-option>
-                    </mat-select>
-                  </mat-form-field>
-                </form>
-              </div>
+            </div>
+            <div class="choose-institution" fxLayout="row">
+              <span fxFlex="40" fxFlex.xs="100">Ինչպես ստանալ ծանուցումներ</span>
+              <form [formGroup]="notyficationForm">
+                <mat-form-field fxFlex="60" fxFlex.xs="100">
+                  <mat-select panelClass="example-panel" placheholder="Ծանուցումներ" formControlName="notyficationOpt" (selectionChange)="getNotification(selected)"
+                    [ngClass]="selected" [(value)]="selected">
+                    <mat-option value="Հաղորդագրություն">Հաղորդագրություն</mat-option>
+                    <mat-option value="Էլ-Փոստ">Էլ-Փոստ</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </form>
+            </div>
           </mat-tab>
         </mat-tab-group>
       </div>

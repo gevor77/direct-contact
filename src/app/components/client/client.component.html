@@ -71,10 +71,10 @@
             <div class="client_margine client_account clinet_sms">
                 <p>
                     Բարի գալուստ հաշիվ: Դուք կարող եք ձեր կարծիքը ուղարկել հետեւյալ համարին.
-                    <strong>{{profiles.phone_number}}</strong>, ռեստորան {{profiles.company_name}} համար
+                    <strong>{{profiles?.phone_number}}</strong>, ռեստորան {{profiles?.company_name}} համար
                 </p>
             </div>
-            <app-message [filter]="myFilter" [unfilter]="myAnswer" [messages]="msgs" *ngFor="let msgs of messages" fxFlex="100"></app-message>
+            <app-message [filter]="myMessageFilter" [unfilter]="myAnswer" [messages]="msgs" *ngFor="let msgs of messages" fxFlex="100"></app-message>
 
         </div>
     </div>

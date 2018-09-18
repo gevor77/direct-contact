@@ -5,3 +5,12 @@
 .admin-page h2{
     padding: 15px 0;
 }
+.tarif-plan{
+    position: absolute;
+    left: 20%;
+    top: 11px;
+    font-size: 14px;
+}
+.tarif-plan-td{
+    position: relative;
+}

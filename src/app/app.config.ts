@@ -1,16 +1,16 @@
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 
-export const appConfig = {
-  apiUrl: 'http://api.direct.atero.solutions/v1',
-  apiOauth: 'http://api.direct.atero.solutions/v1/users/token',
-  serverUrl: 'http://api.direct.atero.solutions',
-};
-
 // export const appConfig = {
-//   apiUrl: 'http://directcontact.am/apis/v1',
-//   apiOauth: 'http://directcontact.am/apis/v1/users/token',
-//   serverUrl: 'http://directcontact.am',
+//   apiUrl: 'http://api.direct.atero.solutions/v1',
+//   apiOauth: 'http://api.direct.atero.solutions/v1/users/token',
+//   serverUrl: 'http://api.direct.atero.solutions',
 // };
+
+export const appConfig = {
+  apiUrl: 'http://directcontact.am/apis/v1',
+  apiOauth: 'http://directcontact.am/apis/v1/users/token',
+  serverUrl: 'http://directcontact.am/apis',
+};
 
 export const allowedImageType = [
   'image/jpeg',
